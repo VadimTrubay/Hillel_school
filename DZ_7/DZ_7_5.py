@@ -12,24 +12,24 @@ text = input('Шифр-машина Цезаря готова к работе\n�
 number = int(input('Введите количество символов сдвига(цифра): '))
 alphabet_ru = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 alphabet_eng = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
+language = input('Укажите язык рус/eng: ')
 result = ''
-language = input('Выберите язык ru/eng: ')
 
-if language == 'ru':
-    for i in text:
-        position = alphabet_ru.find(i)
+if language == 'рус':
+    for n in text:
+        position = alphabet_ru.find(n)
         new_position = position + number
-        if i in alphabet_ru:
+        if n in alphabet_ru:
             result += alphabet_ru[new_position]
         else:
-            result += i
+            result += n
     print(f'Результат шифрования: {result}')
 else:
-    for i in text:
-        position = alphabet_eng.find(i)
+    for n in text:
+        position = alphabet_eng.find(n)
         new_position = position + number
-        if i in alphabet_eng:
+        if n in alphabet_eng:
             result += alphabet_eng[new_position]
         else:
-            result += i
+            result += n
     print(f'Результат шифрования: {result}')
