@@ -2,6 +2,5 @@
 # Необходимо вывести на экран числа от 5 до 1 с помощью цикла for.
 # На экране должно быть: 5 4 3 2 1
 
-list_num = [5, 4, 3, 2, 1]
-for value in list_num:
-    print(value)
+for i in list(range(5, 0, -1)):
+    print(i)
