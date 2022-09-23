@@ -7,38 +7,18 @@ import random
 
 print('Игра угадай число за три попытки.')
 hidden_number = random.randint(1, 10)
+question = input('Сыграем? yes/no >: ')
 
-while True:
-    question = input('Сыграем? yes/no >: ')
-    if question == 'yes':
-
-        entered_number_1 = int(input('Попытка #1 <ввод тут>: '))
-        if entered_number_1 > hidden_number:
+if question == 'yes':
+    for n in range(1, 4):
+        entered_number = int(input(f'Попытка #{n}>: '))
+        n += 1
+        if entered_number > hidden_number:
             print('Бери меньше')
-        elif entered_number_1 < hidden_number:
+        elif entered_number < hidden_number:
             print('Бери больше')
-        else:
+        elif entered_number == hidden_number:
             print('Ты угадал, ты красавчик!')
             break
-
-        entered_number_2 = int(input('Попытка #2 <ввод тут>: '))
-        if entered_number_2 > hidden_number:
-            print('Бери меньше')
-        elif entered_number_2 < hidden_number:
-            print('Бери больше')
-        else:
-            print('Ты угадал, ты красавчик!')
-            break
-
-        entered_number_3 = int(input('Попытка #3 <ввод тут>: '))
-        if entered_number_3 == hidden_number:
-            print('Ты угадал, ты красавчик!')
-            break
-        else:
-            print('Ты не угадал! Не отчаивайся, повезёт в следующий раз!')
-            break
-
-    elif question == 'no':
-        print('Значит, сыграем в другой раз')
-        break
-print('До новых встреч!')
+elif question == 'no':
+    print('Значит, сыграем в другой раз')
