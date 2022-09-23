@@ -16,8 +16,6 @@ language = input('Укажите язык рус/eng: ')
 result = ''
 
 if language == 'рус':
-    if language == 'eng':
-        print('Ошибка, Вы не правильно указали язык ввода! ')
     for n in text:
         position = alphabet_ru.find(n)
         new_position = position + number
@@ -25,11 +23,9 @@ if language == 'рус':
             result += alphabet_ru[new_position]
         else:
             result += n
-    print(f'Результат шифрования: {result}')
+    print(f'Результат шифрования: {result}\nДо скорой встречи!')
 
 elif language == 'eng':
-    if language == 'рус':
-        print('Ошибка, Вы не правильно указали язык ввода! ')
     for n in text:
         position = alphabet_eng.find(n)
         new_position = position + number
@@ -37,8 +33,6 @@ elif language == 'eng':
             result += alphabet_eng[new_position]
         else:
             result += n
-    print(f'Результат шифрования: {result}')
+    print(f'Результат шифрования: {result}\nДо скорой встречи!')
 elif language != 'рус' or language != 'eng':
-    print('Ошибка, Вы не указали язык ввода! ')
-else:
-    print('До скорой встречи!')
+    print('Ошибка, Вы не верно указали язык ввода! ')
