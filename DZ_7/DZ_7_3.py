@@ -20,5 +20,6 @@ if question == 'yes':
         elif entered_number == hidden_number:
             print('Ты угадал, ты красавчик!')
             break
+    print('Игра окончена!')
 elif question == 'no':
     print('Значит, сыграем в другой раз')
