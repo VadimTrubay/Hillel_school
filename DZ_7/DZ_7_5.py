@@ -7,32 +7,26 @@
 зашифровать и вывести на экран.
 Выполнить задание нужно с помощью цикла for и строк, для получения числового представления символа
 можно использовать ord, а для преобразования числа в строку - chr."""
+import sys
 
 text = input('Шифр-машина Цезаря готова к работе\nВведите текст: ').lower()
 number = int(input('Введите количество символов сдвига(цифра): '))
-alphabet_ru = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
-alphabet_eng = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
-language = input('Укажите язык рус/eng: ')
+alphabet_ru = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя' * 2
+alphabet_eng = 'abcdefghijklmnopqrstuvwxyz' * 2
 result = ''
+language = input('Укажите язык рус/eng: ')
+alphabet = alphabet_eng if language == 'eng' else alphabet_ru
 
-if language == 'рус':
-    for n in text:
-        position = alphabet_ru.find(n)
-        new_position = position + number
-        if n in alphabet_ru:
-            result += alphabet_ru[new_position]
-        else:
-            result += n
-    print(f'Результат шифрования: {result}\nДо скорой встречи!')
+if language != 'eng' and language != 'рус':
+    print('Указан неверный язык ввода, начните игру заново!')
+    sys.exit()
 
-elif language == 'eng':
-    for n in text:
-        position = alphabet_eng.find(n)
-        new_position = position + number
-        if n in alphabet_eng:
-            result += alphabet_eng[new_position]
-        else:
-            result += n
-    print(f'Результат шифрования: {result}\nДо скорой встречи!')
-elif language != 'рус' or language != 'eng':
-    print('Ошибка, Вы не верно указали язык ввода! ')
+for n in text:
+    position = alphabet.find(n)
+    new_position = position + number
+    if n in alphabet:
+        result += alphabet[new_position]
+    else:
+        result += n
+
+print(f'Результат шифрования: {result}')
