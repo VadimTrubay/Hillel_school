@@ -1,1 +1,11 @@
-alfavit =  'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+#Вывести треугольник #1 с шириной N с помощью цикла while
+# *****
+# ****
+# ***
+# **
+# *
+
+N = int(input('Enter N: '))
+while N != 0:
+    print(N * "*")
+    N = N - 1
