@@ -13,33 +13,9 @@ upper = 0
 digit = 0
 lenght = 0
 
-
 if password == 'qwerty' or password == 'admin' or password == '':  # 1 сложность
     print('Сложность пароля равна 1')
-
-for symbol in password:
-    if symbol.islower():  # 2 сложность
-        lower += 1
-if lower == 1:
-    print('Сложность пароля равна 2')
-
-for symbol in password:  # 3 сложность
-    if symbol.islower():
-        lower += 1
-    if symbol.isdigit():
-        digit += 1
-if lower != 0 and digit != 0:
-    print('Сложность пароля равна 3')
-
-for symbol in password:  # 4 сложность
-    if symbol.islower():
-        lower += 1
-    if symbol.isdigit():
-        digit += 1
-    if symbol.isupper():
-        digit += 1
-if lower != 0 and digit != 0 and upper != 0:
-    print('Сложность пароля равна 4')
+    exit()
 
 for symbol in password:  # 5 сложность
     if symbol.isspace():
@@ -50,10 +26,38 @@ for symbol in password:  # 5 сложность
         upper += 1
     if symbol.isdigit():
         digit += 1
-    if len(password) > 8:
+    if len(password):
         lenght += 1
 if upper != 0 and lower != 0 \
         and digit != 0 and space != 0 \
-        and lenght != 0:
+        and lenght > 8:
     print('Сложность пароля равна 5')
+    exit()
 
+for symbol in password:  # 4 сложность
+    if symbol.islower():
+        lower += 1
+    if symbol.isdigit():
+        digit += 1
+    if symbol.isupper():
+        digit += 1
+if lower != 0 and digit != 0 and upper != 0:
+    print('Сложность пароля равна 4')
+    exit()
+
+for symbol in password:  # 3 сложность
+    if symbol.islower():
+        lower += 1
+    if symbol.isdigit():
+        digit += 1
+if lower != 0 and digit != 0:
+    print('Сложность пароля равна 3')
+    exit()
+
+if password.islower():  # 2 сложность
+    print('Сложность пароля равна 2')
+    exit()
+
+if password == 'qwerty' or password == 'admin' or password == '':  # 1 сложность
+    print('Сложность пароля равна 1')
+    exit()
