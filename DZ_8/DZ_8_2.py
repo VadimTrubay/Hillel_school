@@ -9,7 +9,7 @@ if count == 0:
     print(0)
     exit(4)
 else:
-    print(0)
+    print(fib_num_1)
 for i in range(count + 1):
     fib_num_1, fib_num_2 = fib_num_2, fib_num_1 + fib_num_2
     print(fib_num_1)
