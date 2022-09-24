@@ -8,20 +8,24 @@
 """
 import sys
 
-text = input('Шифр-машина Цезаря готова к работе\nВведите текст: ').lower()
-number = int(input('Введите количество символов сдвига(цифра): '))
-alphabet_ru = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя' * 2
-alphabet_eng = 'abcdefghijklmnopqrstuvwxyz' * 2
+alphabet_ru = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя' * 2  # русский алфавит
+alphabet_eng = 'abcdefghijklmnopqrstuvwxyz' * 2  # английский алфавит
 result = ''
-language = input('Укажите язык рус/eng: ')
-alphabet = alphabet_eng if language == 'eng' else alphabet_ru
 
+text = input('Шифр-машина Цезаря готова к работе\nВведите текст: ').lower()  # ввод текста и перевод в нижний регистр
+number = int(input('Введите количество символов сдвига(цифра): ').isdigit())  # ввод сдвига и проверка на цыфру
+if number == 0:
+    print('Неправильный формат ввода, начните игру заново!')
+    sys.exit()
+
+language = input('Укажите язык рус/eng: ')  # ввод языка и проверка на правильность
+alphabet = alphabet_eng if language == 'eng' else alphabet_ru
 if language != 'eng' and language != 'рус':
     print('Указан неверный язык ввода, начните игру заново!')
     sys.exit()
 
 for n in text:
-    position = alphabet.find(n)
+    position = alphabet.find(n)  # вхождение в строку(позиция в цифре)
     new_position = position + number
     if n in alphabet:
         result += alphabet[new_position]
