@@ -18,10 +18,15 @@ language = input('Укажите язык рус/eng: ')  # ввод языка 
 alphabet = alphabet_eng if language == 'eng' else alphabet_ru
 
 if language != 'eng' and language != 'рус':
-    print('Указан неверный язык ввода, начните игру заново!')
+    print('Вы ввели неверный язык ввода, начните игру заново!')
     sys.exit()
 
-number = int(input('Введите количество символов сдвига(цифра): '))  # ввод сдвига
+number = input('Введите количество символов сдвига(цифра): ')  # ввод сдвига
+if not number.isdigit():
+    print('Вы ввели неверный формат, начните игру заново!')
+    sys.exit()
+else:
+    number = int(number)
 for n in text:
     position = alphabet.find(n)  # вхождение в строку(позиция в цифре)
     new_position = position + number
