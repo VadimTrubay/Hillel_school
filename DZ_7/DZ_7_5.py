@@ -13,10 +13,11 @@ alphabet_eng = 'abcdefghijklmnopqrstuvwxyz' * 2  # английский алфа
 result = ''
 
 text = input('Шифр-машина Цезаря готова к работе\nВведите текст: ').lower()  # ввод текста и перевод в нижний регистр
-number = int(input('Введите количество символов сдвига(цифра): ').isdigit())  # ввод сдвига и проверка на цыфру
-if number == 0:
-    print('Неправильный формат ввода, начните игру заново!')
-    sys.exit()
+number = int(input('Введите количество символов сдвига(цифра): '))  # ввод сдвига и проверка на цыфру
+
+# if number != 1:
+#     print('Неправильный формат ввода, начните игру заново!')
+#     sys.exit()
 
 language = input('Укажите язык рус/eng: ')  # ввод языка и проверка на правильность
 alphabet = alphabet_eng if language == 'eng' else alphabet_ru
