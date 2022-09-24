@@ -7,5 +7,5 @@
 
 N = int(input('Enter N>: '))
 while N != 0:
-    print(N * "*")
+    print(N * '*')
     N -= 1

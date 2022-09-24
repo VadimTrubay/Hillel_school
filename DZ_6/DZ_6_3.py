@@ -8,6 +8,6 @@
 N = int(input('Enter N>: '))
 h = 0
 while N != 0:
-    print(h * ' ' + N * "*")
+    print(h * ' ' + N * '*')
     h += 1
     N -= 1
