@@ -1,7 +1,7 @@
 # Напишите программу где пользователь вводит число - count,
 # а программа выводит count чисел фибоначчи.
 
-count = int(input('Введите число >: '))
+count = int(input('Enter number >: '))
 fib_num_1 = 0
 fib_num_2 = 1
 
