@@ -9,12 +9,12 @@ uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 digits = '0123456789'
 space = ' '
 
-symbol_len = int(input('Введите количество символов для генерации пароля\n'
-                       '(только 4, 6 или 9 символов >: '))
+symbol_len = int(input('Enter the symbols to generate a password\n'
+                       '(only 4, 6 or 9 symbols >: '))
 
 if 0 <= symbol_len < 4 or symbol_len == 5 \
         or 6 < symbol_len <= 8 or symbol_len > 9:
-    print('Error: Invalid symbol ')
+    print('Error: Invalid symbol')
     exit(4)
 
 if symbol_len == 4:
@@ -23,7 +23,7 @@ if symbol_len == 4:
     password = symbols_1 + symbols_2
     random.shuffle(password)
     password = ''.join(password)
-    print(f'Вот Ваш пароль: {password}')
+    print(f'Your password is: {password}')
 
 elif symbol_len == 6:
     symbols_1 = random.choices(lowercase, k=2)
@@ -32,7 +32,7 @@ elif symbol_len == 6:
     password = symbols_1 + symbols_2 + symbols_3
     random.shuffle(password)
     password = ''.join(password)
-    print(f'Вот Ваш пароль: {password}')
+    print(f'Your password is: {password}')
 
 elif symbol_len == 9:
     symbols_1 = random.choices(lowercase, k=3)
@@ -42,4 +42,4 @@ elif symbol_len == 9:
     password = symbols_1 + symbols_2 + symbols_3 + symbols_4
     random.shuffle(password)
     password = ''.join(password)
-    print(f'Вот Ваш пароль: {password}')
+    print(f'Your password is: {password}')
