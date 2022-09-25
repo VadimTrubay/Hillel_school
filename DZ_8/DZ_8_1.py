@@ -7,7 +7,7 @@
 4. isdigit
 """
 
-string = input('Введите тестовую строку>: ')
+string = input('Enter test string >: ')
 space = 0
 lower = 0
 upper = 0
