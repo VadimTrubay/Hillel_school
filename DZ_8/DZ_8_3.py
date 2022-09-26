@@ -23,7 +23,7 @@ for symbol in enter_password:  # 5 сложность
     if symbol.islower():
         symbol_lower += 1
     if symbol.isupper():
-        symbol_upper+= 1
+        symbol_upper += 1
     if symbol.isdigit():
         symbol_digit += 1
     if len(enter_password):
