@@ -50,7 +50,11 @@ for symbol in enter_password:  # 3 сложность
         symbol_lower += 1
     if symbol.isdigit():
         symbol_digit += 1
-if symbol_lower != 0 and symbol_digit != 0:
+    if symbol.isupper():
+        symbol_upper += 1
+if symbol_lower != 0 and symbol_digit != 0 or \
+        symbol_lower != 0 and symbol_upper != 0 or \
+        symbol_digit != 0 and symbol_upper != 0:
     print('Password complexity is 3')
     exit()
 
