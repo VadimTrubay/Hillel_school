@@ -54,6 +54,8 @@ if symbol_lower != 0 and symbol_digit != 0:
     print('Password complexity is 3')
     exit()
 
-if enter_password.islower():  # 2 сложность
+if enter_password.islower() or \
+        enter_password.isupper() or \
+        enter_password.isdigit():  # 2 сложность
     print('Password complexity is 2')
     exit()
