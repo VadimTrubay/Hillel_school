@@ -22,8 +22,8 @@ for symbol in test_string:
         symbol_upper += 1
     if symbol.isdigit():
         symbol_digit += 1
-all_symbols = symbol_lower and symbol_upper and symbol_digit and symbol_space
-if all_symbols != 0:
+if symbol_lower and symbol_upper != 0 \
+        and symbol_digit and symbol_space:
     print('YES')
 else:
     print('NO')
