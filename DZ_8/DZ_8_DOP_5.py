@@ -4,9 +4,8 @@
 
 test_string = input('Enter test string >: ')
 
-if '@' in test_string:
-    print('YES')
-elif '.' in test_string:
+if test_string.find('@') != -1 and \
+        test_string.find('.') != -1:
     print('YES')
 else:
     print('NO')
