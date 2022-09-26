@@ -29,8 +29,8 @@ for symbol in enter_password:  # 5 сложность
     if len(enter_password):
         len_password += 1
 if symbol_upper != 0 and symbol_lower != 0 \
-        and symbol_digit != 0 and symbol_space != 0 \
-        and len_password > 8:
+        and symbol_digit != 0 and len_password > 8 \
+        or symbol_space != 0:
     print('Password complexity is 5')
     exit()
 
