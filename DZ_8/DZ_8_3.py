@@ -41,7 +41,10 @@ for symbol in enter_password:  # 4 сложность
         symbol_digit += 1
     if symbol.isupper():
         symbol_upper += 1
-if symbol_lower != 0 and symbol_digit != 0 and symbol_upper != 0:
+    if len(enter_password):
+        len_password += 1
+if symbol_lower != 0 and symbol_digit != 0 \
+        and symbol_upper != 0 and len_password != 0:
     print('Password complexity is 4')
     exit()
 
