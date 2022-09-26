@@ -2,12 +2,11 @@
 # Пользователь вводит строку. Если она начинается на 'abc',
 # то заменить их на 'www', иначе добавить в конец строки 'zzz'.
 
-text = input('Enter text >: ')
-
+enter_text = input('Enter text >: ')
 end_str = 'zzz'
 
-if text.startswith('abc'):
-    print(text.replace('abc', 'www'))
+if enter_text.startswith('abc'):
+    print(enter_text.replace('abc', 'www'))
 else:
-    text += end_str
-    print(text)
+    enter_text += end_str
+    print(enter_text)
