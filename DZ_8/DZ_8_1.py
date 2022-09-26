@@ -7,23 +7,23 @@
 4. isdigit
 """
 
-string = input('Enter test string >: ')
-space = 0
-lower = 0
-upper = 0
-digit = 0
+test_string = input('Enter test string >: ')
+symbol_space = 0
+symbol_lower = 0
+symbol_upper = 0
+symbol_digit = 0
 
-for symbol in string:
+for symbol in test_string:
     if symbol.isspace():
-        space += 1
+        symbol_space += 1
     if symbol.islower():
-        lower += 1
+        symbol_lower += 1
     if symbol.isupper():
-        upper += 1
+        symbol_upper += 1
     if symbol.isdigit():
-        digit += 1
-
-if upper != 0 and lower != 0 and digit != 0 and space != 0:
+        symbol_digit += 1
+all_symbols = symbol_lower and symbol_upper and symbol_digit and symbol_space
+if all_symbols != 0:
     print('YES')
 else:
     print('NO')
