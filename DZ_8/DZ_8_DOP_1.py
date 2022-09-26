@@ -2,9 +2,9 @@
 # Пользователь вводит слово, если это слово является
 # полиндромом, то вывести '+', иначе '-'
 
-text = input('Enter text >: ')
+enter_text = input('Enter text >: ')
 
-if text == text[::-1]:
+if enter_text == enter_text[::-1]:
     print('+')
 else:
     print('-')
