@@ -4,8 +4,8 @@
 # Сложность пароля буду оценивать по шкале от 1 до 5 из задании #3
 import random
 
-lowercase = 'abcdefghijklmnopqrstuvwxyz'
-uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+lower_case = 'abcdefghijklmnopqrstuvwxyz'
+upper_case = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 digits = '0123456789'
 space = ' '
 
@@ -18,7 +18,7 @@ if 0 <= symbol_len < 4 or symbol_len == 5 \
     exit(4)
 
 if symbol_len == 4:
-    symbols_1 = random.choices(lowercase, k=2)
+    symbols_1 = random.choices(lower_case, k=2)
     symbols_2 = random.choices(digits, k=2)
     password = symbols_1 + symbols_2
     random.shuffle(password)
@@ -26,18 +26,18 @@ if symbol_len == 4:
     print(f'Your password is: {password}')
 
 elif symbol_len == 6:
-    symbols_1 = random.choices(lowercase, k=2)
+    symbols_1 = random.choices(lower_case, k=2)
     symbols_2 = random.choices(digits, k=2)
-    symbols_3 = random.choices(uppercase, k=2)
+    symbols_3 = random.choices(upper_case, k=2)
     password = symbols_1 + symbols_2 + symbols_3
     random.shuffle(password)
     password = ''.join(password)
     print(f'Your password is: {password}')
 
 elif symbol_len == 9:
-    symbols_1 = random.choices(lowercase, k=3)
+    symbols_1 = random.choices(lower_case, k=3)
     symbols_2 = random.choices(digits, k=3)
-    symbols_3 = random.choices(uppercase, k=2)
+    symbols_3 = random.choices(upper_case, k=2)
     symbols_4 = random.choices(space, k=1)
     password = symbols_1 + symbols_2 + symbols_3 + symbols_4
     random.shuffle(password)
