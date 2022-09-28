@@ -24,7 +24,7 @@ if 4 < symbol_len <= 8:
         password += random.choice(lower_case + upper_case + digits)
     print(f'Your password is: {password}')
 
-if  symbol_len > 8:
+if symbol_len > 8:
     for i in range(symbol_len):
         password += random.choice(lower_case + upper_case + digits + punctuation)
     print(f'Your password is: {password}')
