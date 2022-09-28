@@ -14,6 +14,17 @@ all_symbols = lower_case + upper_case + digits + punctuation
 symbol_len = int(input('Еnter the symbols to generate a password >: '))
 password = ''
 
-for i in range(symbol_len):
-    password += random.choice(all_symbols)
-print(f'Your password is: {password}')
+if 0 < symbol_len <= 4:
+    for i in range(symbol_len):
+        password += random.choice(lower_case + upper_case)
+    print(f'Your password is: {password}')
+
+if 4 < symbol_len <= 8:
+    for i in range(symbol_len):
+        password += random.choice(lower_case + upper_case + digits)
+    print(f'Your password is: {password}')
+
+if  symbol_len > 8:
+    for i in range(symbol_len):
+        password += random.choice(lower_case + upper_case + digits + punctuation)
+    print(f'Your password is: {password}')
