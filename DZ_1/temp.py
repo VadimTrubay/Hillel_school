@@ -1,40 +1,34 @@
-import random
-
-lower_case = 'abcdefghijklmnopqrstuvwxyz'
-upper_case = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-digits = '0123456789'
+enter_password = input('Enter password to verify >: ')
 punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
-all_symbols = lower_case + upper_case + digits + punctuation
-symbol_len = int(input('Еnter the symbols to generate a password >: '))
+symbol_punctuation = 0
+symbol_space = 0
+symbol_lower = 0
+symbol_upper = 0
+symbol_digit = 0
 
-password = ''
+if enter_password == 'qwerty' or enter_password == 'admin' or enter_password == '':  # 1 сложность
+    print('Password complexity is 1')
+    exit()
 
-for i in range(symbol_len):
-    password += random.choice(all_symbols)
-print(password)
-
-
-
-# symbols_lower_case = random.choices(lower_case, k=1)
-# symbols_digits = random.choices(digits, k=1)
-# symbols_upper_case = random.choices(upper_case, k=1)
-# characters = random.choices(punctuation, k=1)
-#
-# symbol_len = int(input('Еnter the symbols to generate a password >: '))
-#
-# if symbol_len == 0:
-#     print('Error: Invalid symbol')
-#     exit(4)
-#
-# def generate(symbol_len):
-
-
-#
-# if symbol_len == 4:
-#     symbols_1 = random.choices(lower_case, k=2)
-#     symbols_2 = random.choices(digits, k=2)
-#     password = symbols_1 + symbols_2
-#     random.shuffle(password)
-#     password = ''.join(password)
-#     print(f'Your password is: {password}')
+for symbol in enter_password:  # 5 сложность
+    for i in punctuation:
+        if i == symbol:
+            symbol_punctuation += 1
+    if symbol.islower():
+        symbol_lower += 1
+    if symbol.isupper():
+        symbol_upper += 1
+    if symbol.isdigit():
+        symbol_digit += 1
+all_symbols = symbol_punctuation + symbol_lower + symbol_upper + symbol_digit
+if symbol_upper != 0 and symbol_lower != 0 \
+        and symbol_digit != 0 and symbol_punctuation != 0 \
+        != 0 and all_symbols >= 8:
+    print(all_symbols)
+print('Password complexity is 5')
+print(all_symbols)
+print(symbol_punctuation)
+print(symbol_digit)
+print(symbol_upper)
+print(symbol_lower)
 
