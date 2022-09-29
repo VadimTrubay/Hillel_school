@@ -6,7 +6,7 @@ import random
 
 lower_case = 'abcdefghijklmnopqrstuvwxyz'
 upper_case = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-digits = '0123456789'
+digits = '0123456789' * 2
 punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
 
 all_symbols = lower_case + upper_case + digits + punctuation
