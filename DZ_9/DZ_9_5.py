@@ -12,4 +12,4 @@ for i in range(0, 5):
 for j in A:
     if j > 5:
         C.append(j)
-print(f'C = {C}')
+print(f'C (number > 5) = {C}')
