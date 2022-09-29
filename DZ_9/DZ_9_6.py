@@ -7,7 +7,7 @@
 
 input_number = 1
 A = []
-B = int(input(f'Enter number N >: '))
+B = int(input('Enter number N >: '))
 
 for i in range(0, B):
     A.append(int(input(f'Enter number {input_number} >: ')))
@@ -21,4 +21,5 @@ for j in A:
         max_value = j
     elif j < min_value:
         min_value = j
+
 print(f'min_value = {min_value}, max_value = {max_value}')
