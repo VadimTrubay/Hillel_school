@@ -16,11 +16,11 @@ symbol_digit = 0
 for symbol in test_string:
     if symbol.isspace():
         symbol_space += 1
-    if symbol.islower():
+    elif symbol.islower():
         symbol_lower += 1
-    if symbol.isupper():
+    elif symbol.isupper():
         symbol_upper += 1
-    if symbol.isdigit():
+    elif symbol.isdigit():
         symbol_digit += 1
 if symbol_lower != 0 and symbol_upper != 0 \
         and symbol_digit != 0 and symbol_space != 0:
