@@ -4,11 +4,9 @@
 
 input_number = 1
 A = []
-B = int(input(f'Enter number N >: '))
+B = int(input('Enter number N >: '))
 for i in range(0, B):
     A.append(int(input(f'Enter number {input_number} >: ')))
     input_number += 1
 A.reverse()
-print(A)
-
-
+print(f'revers A = {A}')
