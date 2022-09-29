@@ -9,8 +9,6 @@ upper_case = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 digits = '0123456789' * 2
 punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
 
-all_symbols = lower_case + upper_case + digits + punctuation
-
 symbol_len = int(input('Еnter the symbols to generate a password >: '))
 password = ''
 
