@@ -4,11 +4,13 @@
 # > 'Lorem 222 ipsum, 123 dolor 1 sit amet
 # Количество цифр: 3
 
-amount_digit = 0
+amount_digits = 0
+new_string = ''
 text = input('Enter text >: ')
-text.split(' ')
+text = text.split(' ')
+
 for i in text:
     if i.isdigit():
-        amount_digit += 1
+        amount_digits += 1
 
-print(amount_digit)
+print(f'amount_digits = {amount_digits}')
