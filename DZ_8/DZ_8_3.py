@@ -23,9 +23,9 @@ for symbol in enter_password:  # 5 сложность
             symbol_punctuation += 1
     if symbol.islower():
         symbol_lower += 1
-    if symbol.isupper():
+    elif symbol.isupper():
         symbol_upper += 1
-    if symbol.isdigit():
+    elif symbol.isdigit():
         symbol_digit += 1
 all_symbols = symbol_punctuation + symbol_lower + symbol_upper + symbol_digit
 if symbol_upper != 0 and symbol_lower != 0 \
@@ -37,9 +37,9 @@ if symbol_upper != 0 and symbol_lower != 0 \
 for symbol in enter_password:  # 4 сложность
     if symbol.islower():
         symbol_lower += 1
-    if symbol.isdigit():
+    elif symbol.isdigit():
         symbol_digit += 1
-    if symbol.isupper():
+    elif symbol.isupper():
         symbol_upper += 1
 all_symbols = symbol_punctuation + symbol_lower + symbol_upper + symbol_digit
 if symbol_lower != 0 and symbol_digit != 0 \
@@ -50,9 +50,9 @@ if symbol_lower != 0 and symbol_digit != 0 \
 for symbol in enter_password:  # 3 сложность
     if symbol.islower():
         symbol_lower += 1
-    if symbol.isdigit():
+    elif symbol.isdigit():
         symbol_digit += 1
-    if symbol.isupper():
+    elif symbol.isupper():
         symbol_upper += 1
 if symbol_lower != 0 and symbol_digit != 0 or \
         symbol_lower != 0 and symbol_upper != 0 or \
