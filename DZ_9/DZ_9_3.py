@@ -8,7 +8,7 @@ A = []
 for i in range(0, 10):
     A.append(int(input(f'Enter number {input_number} >: ')))
     input_number += 1
-B = int(input(f'Enter number N >: '))
+B = int(input('Enter number N >: '))
 amount_N = 0
 for j in A:
     if j == B:
