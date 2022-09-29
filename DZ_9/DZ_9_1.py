@@ -5,10 +5,6 @@ input_number = 1
 list_number = []
 
 for i in range(0, 5):
-    list_number.append(int(input(f'Enter number {input_number} >:')))
+    list_number.append(int(input(f'Enter number {input_number} >: ')))
     input_number += 1
 print(f'Your list = {list_number}')
-
-#
-# if type(i) != int():
-#     print('Error: invalid literal')
