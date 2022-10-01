@@ -11,13 +11,15 @@ symbol_lower = 0
 symbol_upper = 0
 symbol_digit = 0
 
+# 1 сложность
 if enter_password == 'qwerty' or \
         enter_password == 'admin' or \
-        enter_password == '':  # 1 сложность
+        enter_password == '':
     print('Password complexity is 1')
     exit()
 
-for symbol in enter_password:  # 5 сложность
+# 5 сложность
+for symbol in enter_password:
     for i in punctuation:
         if i == symbol:
             symbol_punctuation += 1
@@ -34,19 +36,26 @@ if symbol_upper != 0 and symbol_lower != 0 \
     print('Password complexity is 5')
     exit()
 
-for symbol in enter_password:  # 4 сложность
+# 4 сложность
+for symbol in enter_password:
+    for i in punctuation:
+        if i == symbol:
+            symbol_punctuation += 1
     if symbol.islower():
         symbol_lower += 1
     elif symbol.isdigit():
         symbol_digit += 1
     elif symbol.isupper():
         symbol_upper += 1
-if symbol_lower != 0 and symbol_digit != 0 \
-        and symbol_upper != 0:
+if symbol_lower != 0 and symbol_digit != 0 and symbol_upper or \
+        symbol_lower != 0 and symbol_upper != 0 and symbol_punctuation or \
+        symbol_lower != 0 and symbol_digit != 0 and symbol_punctuation or \
+        symbol_digit != 0 and symbol_upper != 0 and symbol_punctuation:
     print('Password complexity is 4')
     exit()
 
-for symbol in enter_password:  # 3 сложность
+# 3 сложность
+for symbol in enter_password:
     for i in punctuation:
         if i == symbol:
             symbol_punctuation += 1
@@ -65,7 +74,8 @@ if symbol_lower != 0 and symbol_digit != 0 or \
     print('Password complexity is 3')
     exit()
 
-for symbol in enter_password:  # 2 сложность
+# 2 сложность
+for symbol in enter_password:
     for i in punctuation:
         if i == symbol:
             symbol_punctuation += 1
