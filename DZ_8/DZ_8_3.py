@@ -1,9 +1,7 @@
-# Напишите программу где пользователь вводит пароль, а программа проверяет сложность пароля и
-# выводит свой результат в оценочной шкале от 1 до 5.
 # 1 - у пользователя пароль == 'qwerty' or 'admin' или пароль пустой
 # 2 - у пользователя только цифры или спец. символы или все буквы в верхнем или нижнем регистре
-# 3 - у пользователя есть буквы в нижнем регистре и цифры
-# 4 - у пользователя есть цифры, буквы нижнего и верхнего регистра
+# 3- у пользователя в пароле соблюдается два условия из (цифры, буква нижнего регистра, буква верхнего регистра, спец. символы)
+# у пользователя в пароле соблюдается три условия из (цифры, буква нижнего регистра, буква верхнего регистра, спец. символы)
 # 5 - у пользователя есть цифры, буквы нижнего и верхнего регистра, спец. символы и длинна пароля больше 8 символов
 
 enter_password = input('Enter password to verify >: ')
@@ -49,6 +47,9 @@ if symbol_lower != 0 and symbol_digit != 0 \
     exit()
 
 for symbol in enter_password:  # 3 сложность
+    for i in punctuation:
+        if i == symbol:
+            symbol_punctuation += 1
     if symbol.islower():
         symbol_lower += 1
     elif symbol.isdigit():
@@ -57,7 +58,10 @@ for symbol in enter_password:  # 3 сложность
         symbol_upper += 1
 if symbol_lower != 0 and symbol_digit != 0 or \
         symbol_lower != 0 and symbol_upper != 0 or \
-        symbol_digit != 0 and symbol_upper != 0:
+        symbol_lower != 0 and symbol_punctuation != 0 or \
+        symbol_digit != 0 and symbol_upper != 0 or \
+        symbol_digit != 0 and symbol_punctuation != 0 or \
+        symbol_upper != 0 and symbol_punctuation != 0:
     print('Password complexity is 3')
     exit()
 
