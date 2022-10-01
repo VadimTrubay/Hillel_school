@@ -13,7 +13,9 @@ symbol_lower = 0
 symbol_upper = 0
 symbol_digit = 0
 
-if enter_password == 'qwerty' or enter_password == 'admin' or enter_password == '':  # 1 сложность
+if enter_password == 'qwerty' or \
+        enter_password == 'admin' or \
+        enter_password == '':  # 1 сложность
     print('Password complexity is 1')
     exit()
 
@@ -41,7 +43,6 @@ for symbol in enter_password:  # 4 сложность
         symbol_digit += 1
     elif symbol.isupper():
         symbol_upper += 1
-all_symbols = symbol_punctuation + symbol_lower + symbol_upper + symbol_digit
 if symbol_lower != 0 and symbol_digit != 0 \
         and symbol_upper != 0:
     print('Password complexity is 4')
