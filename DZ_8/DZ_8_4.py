@@ -12,12 +12,7 @@ punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
 symbol_len = int(input('Еnter the symbols to generate a password >: '))
 password = ''
 
-if 0 < symbol_len <= 4:
-    for i in range(symbol_len):
-        password += random.choice(lower_case + upper_case)
-    print(f'Your password is: {password}')
-
-elif 4 < symbol_len <= 8:
+if 4 < symbol_len <= 8:
     for i in range(symbol_len):
         password += random.choice(lower_case + upper_case + digits)
     print(f'Your password is: {password}')
