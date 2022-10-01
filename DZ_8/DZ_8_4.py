@@ -17,7 +17,8 @@ while True:
     if symbol_len < 4:
         print('Error: invalid digit, repeat input', end='\n\n')
 
-    elif 4 <= symbol_len <= 8:
+    else:
         for i in range(symbol_len):
             password += random.choice(lower_case + upper_case + digits + punctuation)
         print(f'Your {symbol_len} digit password is >: {password}')
+        break
