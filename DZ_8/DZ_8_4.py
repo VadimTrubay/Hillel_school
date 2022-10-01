@@ -9,15 +9,22 @@ upper_case = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 digits = '0123456789' * 2
 punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
 
-symbol_len = int(input('Еnter the symbols to generate a password >: '))
+symbol_len = 0
 password = ''
 
-if 4 < symbol_len <= 8:
-    for i in range(symbol_len):
-        password += random.choice(lower_case + upper_case + digits)
-    print(f'Your password is: {password}')
+while True:
+    symbol_len = int(input('Еnter the symbols to generate a password >: '))
+    if symbol_len < 4:
+        print('Error: invalid digit, repeat input', end='\n\n')
 
-elif symbol_len > 8:
-    for i in range(symbol_len):
-        password += random.choice(lower_case + upper_case + digits + punctuation)
-    print(f'Your password is: {password}')
+    elif 4 <= symbol_len <= 8:
+        for i in range(symbol_len):
+            password += random.choice(lower_case + upper_case + digits)
+        print(f'Your {symbol_len} digit password is >: {password}')
+        break
+
+    elif symbol_len > 8:
+        for i in range(symbol_len):
+            password += random.choice(lower_case + upper_case + digits + punctuation)
+        print(f'Your {symbol_len} digit password is >: {password}')
+        break
