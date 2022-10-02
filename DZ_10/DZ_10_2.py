@@ -20,9 +20,9 @@ a = [
     ]
 
 for x, x_value in enumerate(a):
-    print(x, x_value)
+    # print(x, x_value)
     for y, y_value in enumerate(x_value):
         if y % 2 == 0:
-            print(y, y_value)
+            print(x, y_value)
 
 
