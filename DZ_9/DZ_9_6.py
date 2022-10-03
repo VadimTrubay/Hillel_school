@@ -5,13 +5,11 @@
 # (запрещено использовать функцию min и max).
 # Вывести эти числа.
 
-input_number = 1
 A = []
 B = int(input('Enter number N >: '))
 
 for i in range(0, B):
-    A.append(int(input(f'Enter number {input_number} >: ')))
-    input_number += 1
+    A.append(int(input(f'Enter number {i + 1} >: ')))
 
 min_value = A[0]
 max_value = 0
