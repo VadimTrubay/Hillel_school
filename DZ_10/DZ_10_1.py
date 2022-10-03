@@ -20,4 +20,3 @@ a = [
 
 for i in range(len(a)):
     print(a[i][0], a[i][-1])
-print()
