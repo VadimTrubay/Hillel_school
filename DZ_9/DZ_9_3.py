@@ -3,11 +3,10 @@
 # Запросить у пользователя число N
 # Вывести пользователю сколько в списке A повторяется число N
 
-input_number = 1
+
 A = []
 for i in range(0, 10):
-    A.append(int(input(f'Enter number {input_number} >: ')))
-    input_number += 1
+    A.append(int(input(f'Enter number {i + 1} >: ')))
 B = int(input('Enter number N >: '))
 amount_N = 0
 for j in A:
