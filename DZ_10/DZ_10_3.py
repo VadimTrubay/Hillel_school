@@ -3,7 +3,6 @@
 # Необходимо учитывать то, что есть разные выигрышные варианты и программа должна их распознавать.
 
 print('Is this game X or 0!')
-
 print('Enter symbols X or 0 according to the scheme\n\n'
       'num_1|num_2|num_3\n'
       '-----------------\n'
@@ -11,10 +10,8 @@ print('Enter symbols X or 0 according to the scheme\n\n'
       '-----------------\n'
       'num_7|num_8|num_9\n\n')
 
-
 a = []
 h = 1
-
 for _ in range(3):
     b = []
     for n in range(3):
@@ -25,13 +22,9 @@ for _ in range(3):
             print('Error: invalid symbol, restart the game!', end='\n\n')
             exit(4)
     a.append(b)
-
-print(a[0])
-print()
-print(a[1])
-print()
-print(a[2])
-
+print(a[0], end='\n')
+print(a[1], end='\n')
+print(a[2], end='\n')
 
 for i in range(len(a)):
     print()
