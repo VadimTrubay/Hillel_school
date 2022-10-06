@@ -49,7 +49,6 @@ for i in range(len(a)):
                 a[0][2] == a[1][1] == a[2][0] == 'x':
             print('Victory player x!')
             exit()
-
         else:
             print('Draw!')
         exit()
