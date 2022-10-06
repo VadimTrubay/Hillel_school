@@ -24,7 +24,7 @@ for _ in range(3):
         if number != '0' and number != 'x':
             print('Error: invalid symbol, restart the game!', end='\n\n')
             exit(4)
-        a.append(b)
+    a.append(b)
 
 print(a[0])
 print()
