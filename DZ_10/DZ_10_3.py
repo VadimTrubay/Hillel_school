@@ -14,36 +14,47 @@ print('Enter symbols X or 0 according to the scheme\n\n'
 
 a = []
 h = 1
+
 for _ in range(3):
     b = []
     for n in range(3):
-        number = int(input(f'Enter number num_{h}: '))
+        number = str(input(f'num_{h}: '))
         h += 1
         b.append(number)
-    a.append(b)
+        if number != '0' and number != 'x':
+            print('Error: invalid symbol, restart the game!', end='\n\n')
+            exit(4)
+        a.append(b)
+
+print(a[0])
+print()
+print(a[1])
+print()
+print(a[2])
+
 
 for i in range(len(a)):
     print()
     for j in range(len(a[i])):
-        if a[0][0] == a[0][1] == a[0][2] == 0 or \
-                a[1][0] == a[1][1] == a[1][2] == 0 or \
-                a[2][0] == a[2][1] == a[2][2] == 0 or \
-                a[0][0] == a[1][0] == a[2][0] == 0 or \
-                a[0][1] == a[1][1] == a[2][1] == 0 or \
-                a[0][2] == a[1][2] == a[2][2] == 0 or \
-                a[0][0] == a[1][1] == a[2][2] == 0 or \
-                a[0][2] == a[1][1] == a[2][0] == 0:
+        if a[0][0] == a[0][1] == a[0][2] == '0' or \
+                a[1][0] == a[1][1] == a[1][2] == '0' or \
+                a[2][0] == a[2][1] == a[2][2] == '0' or \
+                a[0][0] == a[1][0] == a[2][0] == '0' or \
+                a[0][1] == a[1][1] == a[2][1] == '0' or \
+                a[0][2] == a[1][2] == a[2][2] == '0' or \
+                a[0][0] == a[1][1] == a[2][2] == '0' or \
+                a[0][2] == a[1][1] == a[2][0] == '0':
             print('Victory player 0!')
             exit()
-        elif a[0][0] == a[0][1] == a[0][2] == 1 or \
-                a[1][0] == a[1][1] == a[1][2] == 1 or \
-                a[2][0] == a[2][1] == a[2][2] == 1 or \
-                a[0][0] == a[1][0] == a[2][0] == 1 or \
-                a[0][1] == a[1][1] == a[2][1] == 1 or \
-                a[0][2] == a[1][2] == a[2][2] == 1 or \
-                a[0][0] == a[1][1] == a[2][2] == 1 or \
-                a[0][2] == a[1][1] == a[2][0] == 1:
-            print('Victory player 1!')
+        elif a[0][0] == a[0][1] == a[0][2] == 'x' or \
+                a[1][0] == a[1][1] == a[1][2] == 'x' or \
+                a[2][0] == a[2][1] == a[2][2] == 'x' or \
+                a[0][0] == a[1][0] == a[2][0] == 'x' or \
+                a[0][1] == a[1][1] == a[2][1] == 'x' or \
+                a[0][2] == a[1][2] == a[2][2] == 'x' or \
+                a[0][0] == a[1][1] == a[2][2] == 'x' or \
+                a[0][2] == a[1][1] == a[2][0] == 'x':
+            print('Victory player x!')
             exit()
 
         else:
