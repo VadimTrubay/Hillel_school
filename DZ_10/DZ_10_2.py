@@ -18,8 +18,9 @@ a = [
     [6, 0, 7, 8, 1, 2, 5],
     [5, 7, 2, 7, 5, 2, 1]
     ]
-for x, x_value in enumerate(a):
+
+for i in range(len(a)):
     print()
-    for y, y_value in enumerate(x_value):
-        if y % 2 == 0:
-            print(y_value, end=' ')
+    for j in range(len(a[i])):
+        if j % 2 == 0 and a[0][j] > a[-1][j]:
+            print(a[i][j], end=' ')
