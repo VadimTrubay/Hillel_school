@@ -23,7 +23,7 @@ def my_print():
 
 
 for i in range(0, 9):
-    value = input('Enter value(x or 0)>: ')
+    value = input('Enter symbol(only x or 0)>: ')
     cell_number = int(input('Enter cell number>: '))
     if cell_number == 1:
         a[0][0] = value
