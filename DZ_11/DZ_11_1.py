@@ -6,8 +6,8 @@
 # * Вывести имена людей которые должны за Сентябрь и Октябрь
 # * Вывести должников за Октябрь у которых нет долга за Сентябрь
 
-A_debtors_sept = {"1", "2", "3", "5", "6", "8"}
-B_debtors_okt = {"2", "3", "6", "9", "10", "11", "12"}
+A_debtors_sept = {"vasia", "petia", "kolia", "sasha", "vadim", "misha"}
+B_debtors_okt = {"vasia", "tima", "kolia", "galia", "fedia", "platon", "misha"}
 
-print(f'debtors september and oktober = {A_debtors_sept.union(B_debtors_okt)}')
+print(f'debtors september and oktober = {A_debtors_sept.intersection(B_debtors_okt)}')
 print(f'debtors only for october = {B_debtors_okt.difference(A_debtors_sept)}')
