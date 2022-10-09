@@ -28,3 +28,15 @@
 # OK
 # OK
 
+
+
+n = int(input('Enter number of files >: '))
+while True:
+    string_file = input('Enter a string with the file name and allowed operations >: ')
+    if string_file.isdigit():
+        print('Error: input Error, repeat input', end='\n')
+    else:
+        for i in range(n):
+
+
+
