@@ -28,15 +28,30 @@
 # OK
 # OK
 
+# d = []
+# i = 0
+# n = int(input('Enter number of files >: '))
+# if i <= n:
+#     for i in range(n):
+#         string_file = input('Enter a string with the file name and allowed operations >: ')
+#         d.append(string_file)
+# a = dict(s.split(' ') for s in d)
+# # print('W' in d)
+# print(d)
 
+d_rec = []
+j = 0
+m = int(input('Enter number of file requests >: '))
+if j <= m:
+    for j in range(m):
+        string_file = input(f'Enter request {j+1} >: ')
+        d_rec.append(string_file)
+a = dict(s.split(' ') for s in d_rec)
+# print('W' in d)
+print(d_rec)
+print(a)
 
-n = int(input('Enter number of files >: '))
-while True:
-    string_file = input('Enter a string with the file name and allowed operations >: ')
-    if string_file.isdigit():
-        print('Error: input Error, repeat input', end='\n')
-    else:
-        for i in range(n):
-
-
+# a = [ 'abc=lalalla', 'appa=kdkdkdkd', 'kkakaka=oeoeoeo']
+# d = dict(s.split('=') for s in a)
+# print d
 
