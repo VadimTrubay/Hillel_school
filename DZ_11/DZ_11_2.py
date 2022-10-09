@@ -28,30 +28,28 @@
 # OK
 # OK
 
-# d = []
-# i = 0
-# n = int(input('Enter number of files >: '))
-# if i <= n:
-#     for i in range(n):
-#         string_file = input('Enter a string with the file name and allowed operations >: ')
-#         d.append(string_file)
-# a = dict(s.split(' ') for s in d)
+x = ['W', 'R', 'X', 'WR', 'WX', 'RX', 'WRX']
+
+i = 0
+n = int(input('Enter number of files >: '))
+if i <= n:
+    for i in range(n):
+        string_file = input('Enter a string with the file name and allowed operations >: ')
+        d = [string_file]
+        for s in range(len(d)):
+            print(s)
+
+        print(d)
+
+# d_rec = []
+# j = 0
+# m = int(input('Enter number of file requests >: '))
+# if j <= m:
+#     for j in range(m):
+#         string_file = input(f'Enter request {j+1} >: ')
+#         d_rec.append(string_file)
+# a = dict(s.split(' ') for s in d_rec)
 # # print('W' in d)
-# print(d)
-
-d_rec = []
-j = 0
-m = int(input('Enter number of file requests >: '))
-if j <= m:
-    for j in range(m):
-        string_file = input(f'Enter request {j+1} >: ')
-        d_rec.append(string_file)
-a = dict(s.split(' ') for s in d_rec)
-# print('W' in d)
-print(d_rec)
-print(a)
-
-# a = [ 'abc=lalalla', 'appa=kdkdkdkd', 'kkakaka=oeoeoeo']
-# d = dict(s.split('=') for s in a)
-# print d
+# print(d_rec)
+# print(a)
 
