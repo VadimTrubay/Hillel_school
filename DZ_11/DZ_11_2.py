@@ -30,16 +30,31 @@
 
 # x = ['W', 'R', 'X', 'WR', 'WX', 'RX', 'WRX']
 
-# i = 0
-# n = int(input('Enter number of files >: '))
-# if i <= n:
-#     for i in range(n):
-#         string_file = input('Enter a string with the file name and allowed operations >: ')
-#         d = [string_file]
-#         for s in range(len(d)):
-#             print(s)
-#
-#         print(d)
+i = 0
+n = int(input('Enter number of files >: '))
+if i <= n:
+    for i in range(n):
+        string_file = input('Enter a string with the file name and allowed operations >: ')
+        d = [string_file]
+        for s in range(len(d)):
+            print(d[s])
+            for n in range(len(d[s])):
+                # print(d[s][n])
+                if d[s][n] == 'W':
+                    print('W')
+                elif d[s][n] == 'R':
+                    print('R')
+                elif d[s][n] == 'X':
+                    print('X')
+                elif d[s][n] == 'W R':
+                    print('W R')
+                elif d[s][n] == 'W X':
+                    print('W X')
+                elif d[s][n] == 'R X':
+                    print('R X')
+                elif d[s][n] == 'W R X':
+                    print('W R X')
+        print(d)
 
 # d_rec = []
 # j = 0
@@ -54,24 +69,24 @@
 # print(a)
 
 
-d = ['python.exe X R', 'book.txt W ', 'notebook.exe ']
-for s in range(len(d)):
-    # print(d[s])
-    for n in range(len(d[s])):
-        # print(d[s][n])
-        if d[s][n] == 'W':
-            print('W')
-        elif d[s][n] == 'R':
-            print('R')
-        elif d[s][n] == 'X':
-            print('X')
-        elif d[s][n] == 'W R':
-            print('W R')
-        elif d[s][n] == 'W X':
-            print('W X')
-        elif d[s][n] == 'R X':
-            print('R X')
-        elif d[s][n] == 'W R X':
-            print('W R X')
+# d = ['python.exe X R', 'book.txt W ', 'notebook.exe ']
+# for s in range(len(d)):
+#     # print(d[s])
+#     for n in range(len(d[s])):
+#         # print(d[s][n])
+#         if d[s][n] == 'W':
+#             print('W')
+#         elif d[s][n] == 'R':
+#             print('R')
+#         elif d[s][n] == 'X':
+#             print('X')
+#         elif d[s][n] == 'W R':
+#             print('W R')
+#         elif d[s][n] == 'W X':
+#             print('W X')
+#         elif d[s][n] == 'R X':
+#             print('R X')
+#         elif d[s][n] == 'W R X':
+#             print('W R X')
 
 
