@@ -28,90 +28,28 @@
 # OK
 # OK
 
-files = {}
-
-for i in range(int(input(f'Enter number of files >: '))):
-    name, *operations = input('Enter a string with the file name and allowed operations >: ').split()
-    files[name] = operations
+data_files = {}
+i = 0
+for i in range(int(input('Enter number of files >: '))):
+    name, *operations = input(f'Enter a string with the file name and allowed operations >: {i+1} ').split()
+    data_files[name] = operations
 
 j = 0
 for j in range(int(input('Enter number of file requests >: '))):
-    operation, name = input(f'Enter request {j+1} >: ').split()
-    if operation == 'read':
-        if 'R' in files[name]:
+    request, name = input(f'Enter request {j+1} >: ').split()
+    if request == 'read':
+        if 'R' in data_files[name]:
             print('OK')
         else:
             print('Access denied')
-    elif operation == 'write':
-        if 'W' in files[name]:
+    elif request == 'write':
+        if 'W' in data_files[name]:
             print('OK')
         else:
             print('Access denied')
-    elif operation == 'execute':
-        if 'X' in files[name]:
+    elif request == 'execute':
+        if 'X' in data_files[name]:
             print('OK')
         else:
             print('Access denied')
-
-# x = ['W', 'R', 'X', 'WR', 'WX', 'RX', 'WRX']
-
-# i = 0
-# n = int(input('Enter number of files >: '))
-# if i <= n:
-#     for i in range(n):
-#         string_file = input('Enter a string with the file name and allowed operations >: ')
-#         d = [string_file]
-#         for s in range(len(d)):
-#             print(d[s])
-#             for n in range(len(d[s])):
-#                 # print(d[s][n])
-#                 if d[s][n] == 'W':
-#                     print('W')
-#                 elif d[s][n] == 'R':
-#                     print('R')
-#                 elif d[s][n] == 'X':
-#                     print('X')
-#                 elif d[s][n] == 'W R':
-#                     print('W R')
-#                 elif d[s][n] == 'W X':
-#                     print('W X')
-#                 elif d[s][n] == 'R X':
-#                     print('R X')
-#                 elif d[s][n] == 'W R X':
-#                     print('W R X')
-#         print(d)
-
-# d_rec = []
-# j = 0
-# m = int(input('Enter number of file requests >: '))
-# if j <= m:
-#     for j in range(m):
-#         string_file = input(f'Enter request {j+1} >: ')
-#         d_rec.append(string_file)
-# a = dict(s.split(' ') for s in d_rec)
-# # print('W' in d)
-# print(d_rec)
-# print(a)
-
-
-# d = ['python.exe X R', 'book.txt W ', 'notebook.exe ']
-# for s in range(len(d)):
-#     # print(d[s])
-#     for n in range(len(d[s])):
-#         # print(d[s][n])
-#         if d[s][n] == 'W':
-#             print('W')
-#         elif d[s][n] == 'R':
-#             print('R')
-#         elif d[s][n] == 'X':
-#             print('X')
-#         elif d[s][n] == 'W R':
-#             print('W R')
-#         elif d[s][n] == 'W X':
-#             print('W X')
-#         elif d[s][n] == 'R X':
-#             print('R X')
-#         elif d[s][n] == 'W R X':
-#             print('W R X')
-
-
+print(data_files)
