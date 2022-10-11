@@ -30,13 +30,13 @@
 
 data_files = {}
 i = 0
-for i in range(int(input('Enter number of files >: '))):
-    name, *operations = input(f'Enter a string with the file name and allowed operations >: {i+1} ').split()
+for i in range(int(input('Enter number of files(digit) >: '))):
+    name, *operations = input(f'Enter a string with the file name and allowed operations {i+1}>: ').split()
     data_files[name] = operations
 
 j = 0
-for j in range(int(input('Enter number of file requests >: '))):
-    request, name = input(f'Enter request {j+1} >: ').split()
+for j in range(int(input('Enter number of file requests(digit) >: '))):
+    request, name = input(f'Enter request {j+1}>: ').split()
     if request == 'read':
         if 'R' in data_files[name]:
             print('OK')
