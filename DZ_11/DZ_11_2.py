@@ -16,7 +16,7 @@
 # book.txt R W
 # notebook.exe R W X
 # 5
-# read python.exe
+# execute python.exe
 # read book.txt
 # write notebook.exe
 # execute notebook.exe
@@ -52,4 +52,3 @@ for j in range(int(input('Enter number of file requests(digit) >: '))):
             print('OK')
         else:
             print('Access denied')
-print(data_files)
