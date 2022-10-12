@@ -27,7 +27,7 @@ def my_print():
 for i in range(0, 9):
     value = input(f'Move #{i + 1} - enter symbol(only x or 0)>: ')
     cell_number = int(input(f'Move #{i + 1} - enter cell number(only digit)>: '))
-    if cell_number >= 9 or cell_number <= 1:
+    if cell_number > 9 or cell_number < 1:
         print('Error: you entered an invalid character, restart the game!')
         exit()
     if cell_number == 1:
