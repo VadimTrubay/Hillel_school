@@ -2,6 +2,7 @@
 # выяснить какой игрок победил (x или o), если никто не победил вывести "Ничья".
 # Необходимо учитывать то, что есть разные выигрышные варианты и программа должна их распознавать.
 
+
 print('Is this game X or 0!')
 print('Enter symbols X or 0 according to the scheme\n'
       '1 | 2 | 3 \n'
@@ -24,8 +25,11 @@ def my_print():
 
 
 for i in range(0, 9):
-    value = input('Enter symbol(only x or 0)>: ')
-    cell_number = int(input('Enter cell number>: '))
+    value = input(f'Move #{i + 1} - enter symbol(only x or 0)>: ')
+    cell_number = int(input(f'Move #{i + 1} - enter cell number(only digit)>: '))
+    if cell_number >= 9 or cell_number <= 1:
+        print('Error: you entered an invalid character, restart the game!')
+        exit()
     if cell_number == 1:
         a[0][0] = value
         my_print()
@@ -55,26 +59,26 @@ for i in range(0, 9):
         my_print()
 
     zero = a[0][0] == a[0][1] == a[0][2] == '0' or \
-        a[1][0] == a[1][1] == a[1][2] == '0' or \
-        a[2][0] == a[2][1] == a[2][2] == '0' or \
-        a[0][0] == a[1][0] == a[2][0] == '0' or \
-        a[0][1] == a[1][1] == a[2][1] == '0' or \
-        a[0][2] == a[1][2] == a[2][2] == '0' or \
-        a[0][0] == a[1][1] == a[2][2] == '0' or \
-        a[0][2] == a[1][1] == a[2][0] == '0'
+           a[1][0] == a[1][1] == a[1][2] == '0' or \
+           a[2][0] == a[2][1] == a[2][2] == '0' or \
+           a[0][0] == a[1][0] == a[2][0] == '0' or \
+           a[0][1] == a[1][1] == a[2][1] == '0' or \
+           a[0][2] == a[1][2] == a[2][2] == '0' or \
+           a[0][0] == a[1][1] == a[2][2] == '0' or \
+           a[0][2] == a[1][1] == a[2][0] == '0'
     if zero:
         print()
         print('VICTORY PLAYER "0"!')
         exit()
 
     xero = a[0][0] == a[0][1] == a[0][2] == 'x' or \
-        a[1][0] == a[1][1] == a[1][2] == 'x' or \
-        a[2][0] == a[2][1] == a[2][2] == 'x' or \
-        a[0][0] == a[1][0] == a[2][0] == 'x' or \
-        a[0][1] == a[1][1] == a[2][1] == 'x' or \
-        a[0][2] == a[1][2] == a[2][2] == 'x' or \
-        a[0][0] == a[1][1] == a[2][2] == 'x' or \
-        a[0][2] == a[1][1] == a[2][0] == 'x'
+           a[1][0] == a[1][1] == a[1][2] == 'x' or \
+           a[2][0] == a[2][1] == a[2][2] == 'x' or \
+           a[0][0] == a[1][0] == a[2][0] == 'x' or \
+           a[0][1] == a[1][1] == a[2][1] == 'x' or \
+           a[0][2] == a[1][2] == a[2][2] == 'x' or \
+           a[0][0] == a[1][1] == a[2][2] == 'x' or \
+           a[0][2] == a[1][1] == a[2][0] == 'x'
     if xero:
         print()
         print('VICTORY PLAYER "X"!')
