@@ -17,3 +17,4 @@ f = open('my_file.bin', 'rb')
 b = pickle.load(f)
 print('b = ', b)
 f.close()
+
