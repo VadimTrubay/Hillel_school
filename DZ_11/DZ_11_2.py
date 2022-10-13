@@ -37,12 +37,12 @@ for i in range(int(input('Enter number of files(digit) >: '))):
 j = 0
 for j in range(int(input('Enter number of file requests(digit) >: '))):
     request, name = input(f'Enter request {j+1}>: ').split()
-    if request == 'read':
+    if request == 'write':
         if 'W' in data_files[name]:
             print('OK')
         else:
             print('Access denied')
-    elif request == 'write':
+    elif request == 'read':
         if 'R' in data_files[name]:
             print('OK')
         else:
