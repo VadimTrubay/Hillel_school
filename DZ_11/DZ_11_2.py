@@ -44,5 +44,4 @@ for j in range(int(input('Enter number of file requests(digit) >: '))):
     if action[request] in file[name]:
         print('OK')
     else:
-
         print('Access denied')
