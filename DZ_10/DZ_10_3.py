@@ -11,10 +11,11 @@ print('Enter symbols X or 0 according to the scheme\n'
       '---------\n'
       '7 | 8 | 9 \n')
 
-n = 3
-m = 3
-a = [['-'] * m for i in range(n)]
-h = 0
+a = [
+    ['-', '-', '-'],
+    ['-', '-', '-'],
+    ['-', '-', '-']
+]
 
 
 def my_print():
@@ -23,6 +24,8 @@ def my_print():
     print(a[2])
     print()
 
+
+my_print()
 
 for i in range(0, 9):
     value = input(f'Move #{i + 1} - enter symbol(only x or 0)>: ')
@@ -67,7 +70,6 @@ for i in range(0, 9):
            a[0][0] == a[1][1] == a[2][2] == '0' or \
            a[0][2] == a[1][1] == a[2][0] == '0'
     if zero:
-        print()
         print('VICTORY PLAYER "0"!')
         exit()
 
@@ -80,10 +82,8 @@ for i in range(0, 9):
            a[0][0] == a[1][1] == a[2][2] == 'x' or \
            a[0][2] == a[1][1] == a[2][0] == 'x'
     if xero:
-        print()
         print('VICTORY PLAYER "X"!')
         exit()
 
     if i >= 8:
-        print()
         print('DRAW!')
