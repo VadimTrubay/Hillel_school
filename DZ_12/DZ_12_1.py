@@ -4,16 +4,16 @@
 
 import pickle
 
-a = [{'age': '30', 'sex': 'Man', 'city': 'Od'},
-     {'age': '40', 'sex': 'Mann', 'city': 'Ode'},
-     {'age': '50', 'sex': 'Mannn', 'city': 'Odess'},
-]
+a = [{'age': '30', 'sex': 'Man', 'city': 'Kiev'},
+     {'age': '40', 'sex': 'Woman', 'city': 'Dnipro'},
+     {'age': '50', 'sex': 'Man', 'city': 'Odessa'},
+     ]
 
-f = open('myfile.bin', 'wb')
+f = open('my_file.bin', 'wb')
 pickle.dump(a, f)
 f.close()
 
-f = open('myfile.bin', 'rb')
+f = open('my_file.bin', 'rb')
 b = pickle.load(f)
 print('b = ', b)
 f.close()
