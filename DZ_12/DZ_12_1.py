@@ -26,6 +26,6 @@ pickle.dump(data, file)
 file.close()
 
 file = open('my_file.txt', 'rb')
-b = pickle.load(file)
-print('b = ', b)
+r_data = pickle.load(file)
+print(r_data)
 file.close()
