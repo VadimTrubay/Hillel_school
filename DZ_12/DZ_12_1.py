@@ -1,6 +1,5 @@
 # Дан список словарей, необходимо записать их в файл с помощью модуля pickle.
-# В каждом из словарей одинаковый набор ключей,
-# а все значения представлены в виде строк
+# В каждом из словарей одинаковый набор ключей, а все значения представлены в виде строк
 
 import pickle
 
@@ -21,11 +20,9 @@ data = [{
     },
 ]
 
-file = open('my_file.txt', 'wb')
-pickle.dump(data, file)
-file.close()
+with open('my_file.txt', 'wb') as file:
+    pickle.dump(data, file)
 
-file = open('my_file.txt', 'rb')
-r_data = pickle.load(file)
-print(r_data)
-file.close()
+# with open('my_file.txt', 'rb') as file:
+#     r_data = pickle.load(file)
+#     print(r_data)
