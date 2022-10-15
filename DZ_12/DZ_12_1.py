@@ -20,9 +20,8 @@ data = [{
     },
 ]
 
-with open('my_file.txt', 'wb') as file:
-    pickle.dump(data, file)
+with open('my_file.txt', 'wb') as f:
+    pickle.dump(data, f)
 
-# with open('my_file.txt', 'rb') as file:
-#     r_data = pickle.load(file)
-#     print(r_data)
+# with open('my_file.txt', 'rb') as f:
+#     print(pickle.load(f))

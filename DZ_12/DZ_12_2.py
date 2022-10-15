@@ -23,6 +23,9 @@ for key, value in B.items():
         C[key] = [C[key], value]
     else:
         C[key] = value
-json_C = json.dumps(C)
-with open('my_file.json', 'w') as file:
-    file.write(json_C)
+
+with open('result.json', 'w') as f:
+    json.dump(C, f)
+
+with open('result.json', 'r') as f:
+    print(json.load(f))
