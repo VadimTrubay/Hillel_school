@@ -27,5 +27,5 @@ for key, value in B.items():
 with open('result.json', 'w') as f:
     json.dump(C, f)
 
-with open('result.json', 'r') as f:
-    print(json.load(f))
+# with open('result.json', 'r') as f:
+#     print(json.load(f))
