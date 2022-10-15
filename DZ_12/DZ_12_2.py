@@ -16,7 +16,7 @@
 import json
 
 A = {'key': 1, 'key1': True}
-B = {'key': 'Hello', 'key1': False, 'key2': 'word'}
+B = {'key': 'Hello', 'key1': False, 'key2': 'World'}
 C = dict.copy(A)
 for key, value in B.items():
     if C.get(key):
