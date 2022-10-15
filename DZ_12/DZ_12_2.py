@@ -12,3 +12,17 @@
 # B = {'key': 'Hello'}
 # C = {'key': [1, 'Hello'], 'key2': True}
 # Записать результат в файл result.json в формате JSON.
+
+import json
+
+A = {'key': 1, 'key1': True}
+B = {'key': 'Hello', 'key1': False, 'key2': 'word'}
+C = dict.copy(A)
+for key, value in B.items():
+    if C.get(key):
+        C[key] = [C[key], value]
+    else:
+        C[key] = value
+json_C = json.dumps(C)
+with open('my_file.json', 'w') as file:
+    file.write(json_C)
