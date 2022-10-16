@@ -5,6 +5,4 @@
 def change(lst):
     if len(lst) >= 2:
         lst[0], lst[-1] = lst[-1], lst[0]
-    else:
-        print("Error: not enough list items")
     return lst
