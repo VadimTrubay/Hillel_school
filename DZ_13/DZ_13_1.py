@@ -8,6 +8,3 @@ def change(lst):
     else:
         print("Error: not enough list items")
     return lst
-
-
-print(change([1, 2, 3, 4, 5, 6]))
