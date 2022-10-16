@@ -3,5 +3,4 @@
 # Предполагается, что элементы списка будут соответствовать правилам задания ключей в словарях.
 
 def to_dict(lst):
-    a = {lst[i]: lst[i] for i in range(0, len(lst))}
-    return a
+    return {lst[i]: lst[i] for i in range(0, len(lst))}
