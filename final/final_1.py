@@ -1,4 +1,5 @@
 import random
+import time
 
 A = ['rock', 'scissors', 'paper', 'lizard', 'spock']
 a = [
@@ -20,14 +21,14 @@ a = [
 
 while True:
     player = input('Your choice (rock paper scissors lizard spock)?>: ')
-    print()
     print(f'Player: {player}')
+    time.sleep(1.5)
     computer = random.choice(A)
     print(f'Computer: {computer}')
-    if player == computer:
+    time.sleep(1.5)
+    if computer == player:
         print('Draw')
         print()
-        continue
     for x in range(len(a)):
         for i in a[x].items():
             if player == i[0] and computer == i[1]:
@@ -38,7 +39,8 @@ while True:
                 print("Computer WIN!")
                 print()
                 break
-    question = input('Repeat (Y/N)?')
+    time.sleep(1.5)
+    question = input('Repeat (y/n)?>: ')
     print()
-    if question != 'Y':
+    if question != 'y':
         exit()
