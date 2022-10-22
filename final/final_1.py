@@ -22,20 +22,20 @@ while True:
     player = input('Your choice (rock paper scissors lizard spock)?>: ')
     if player not in A:
         print(f'Invalid input "{player}"')
-        break
-    print(f'Player: {player}')
-    computer = random.choice(A)
-    print(f'Computer: {computer}')
-    if computer == player:
-        print('Draw')
-    for x in range(len(a)):
-        for i in a[x].items():
-            if player == i[0] and computer == i[1]:
-                print("Player WIN!")
-                break
-            elif computer == i[0] and player == i[1]:
-                print("Computer WIN!")
-                break
+    else:
+        print(f'Player: {player}')
+        computer = random.choice(A)
+        print(f'Computer: {computer}')
+        if computer == player:
+            print('Draw')
+        for x in range(len(a)):
+            for i in a[x].items():
+                if player == i[0] and computer == i[1]:
+                    print("Player WIN!")
+                    break
+                elif computer == i[0] and player == i[1]:
+                    print("Computer WIN!")
+                    break
     question = input('Repeat (y/n)?>: ')
     if question != 'y':
         exit()
