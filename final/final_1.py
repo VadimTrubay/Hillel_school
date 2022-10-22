@@ -31,10 +31,10 @@ while True:
         for x in range(len(a)):
             for i in a[x].items():
                 if player == i[0] and computer == i[1]:
-                    print("Player WIN!")
+                    print('Player WIN!')
                     break
                 elif computer == i[0] and player == i[1]:
-                    print("Computer WIN!")
+                    print('Computer WIN!')
                     break
     question = input('Repeat (y/n)?>: ')
     if question != 'y':
