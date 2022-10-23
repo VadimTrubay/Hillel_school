@@ -28,9 +28,11 @@ data = [
 
 
 def delete_item(obj: list, position: int):
-    data.append(obj[position])
-    position -= 1
+    for i in range(len(data)):
+        for value in data[i].values():
+            if value == position:
+                data.append(data[i])
     return obj
 
 
-print(delete_item(data, 1))
+print(delete_item(data, 3))
