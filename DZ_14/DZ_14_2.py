@@ -35,4 +35,4 @@ def delete_item(obj: list, position: int):
     return obj
 
 
-print(delete_item(data, 3))
+print(delete_item(data, 4))
