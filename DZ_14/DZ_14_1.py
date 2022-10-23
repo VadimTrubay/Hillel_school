@@ -33,9 +33,11 @@ data = [
 
 
 def delete_item(obj: list, position: int):
-    del data[position]
-    position -= 1
+    for i in range(len(data)-1, -1, -1):
+        for value in data[i].values():
+            if value == position:
+                del data[i]
     return obj
 
 
-print(delete_item(data, 1))
+print(delete_item(data, 2))
