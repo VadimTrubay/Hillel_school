@@ -29,6 +29,14 @@ data = [
         'name': 'Test 3',
         'position': 3
     },
+    {
+        'name': 'Test 4',
+        'position': 4
+    },
+    {
+        'name': 'Test 5',
+        'position': 5
+    },
 ]
 
 
@@ -37,3 +45,6 @@ def del_pos(lst, pos_num):
     for i, value in enumerate(lst):
         value['position'] = (i + 1)
     return lst
+
+
+print(del_pos(data, 3))
