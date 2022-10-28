@@ -27,7 +27,7 @@ class Human:
 
 
 vasia = Human('vasia', 'pupkin', 20, '0991111111', 'kiev')
-petia = Human('petia', 'shupkin', 21, '0992222222', 'lviv')
+petia = Human('petia', 'mupkin', 21, '0992222222', 'lviv')
 kolia = Human('kolia', 'tupkin', 22, '0993333333', 'odessa')
 
 print(vasia.get_info())
