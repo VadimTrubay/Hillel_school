@@ -26,10 +26,11 @@ class Human:
         print(f"{self.phone} вызывает абонента {phone_number}")
 
 
-vasia = Human('vasia', 'pupkin', 20, '0991111111', 'kiev')
-petia = Human('petia', 'mupkin', 21, '0992222222', 'lviv')
-kolia = Human('kolia', 'tupkin', 22, '0993333333', 'odessa')
+vasia = Human('vasia', 'pupkin', 20, 380991111111, 'kiev')
+petia = Human('petia', 'mupkin', 21, 380992222222, 'lviv')
+kolia = Human('kolia', 'tupkin', 22, 380993333333, 'odessa')
 
 print(vasia.get_info())
 print(petia.get_info())
 print(kolia.get_info())
+vasia.call(380663332211)
