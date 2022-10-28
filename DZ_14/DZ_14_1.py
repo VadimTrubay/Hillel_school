@@ -32,12 +32,8 @@ data = [
 ]
 
 
-def delete_item(obj: list, position: int):
-    for i in range(len(data)-1, -1, -1):
-        for value in data[i].values():
-            if value == position:
-                del data[i]
-    return obj
-
-
-print(delete_item(data, 3))
+def del_pos(lst, pos_num):
+    lst.pop(pos_num - 1)
+    for i, value in enumerate(lst):
+        value['position'] = (i + 1)
+    return lst

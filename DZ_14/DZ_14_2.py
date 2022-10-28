@@ -27,12 +27,10 @@ data = [
 ]
 
 
-def delete_item(obj: list, position: int):
-    for i in range(len(data)):
-        for value in data[i].values():
-            if value == position:
-                data.append(data[i])
-    return obj
+def add_pos(lst, pos_num, pos):
+    new_dict = {'name': f'{pos} {len(lst) + 1}', 'position': None}
+    lst.insert(pos_num - 1, new_dict)
 
-
-print(delete_item(data, 4))
+    for i, value in enumerate(lst):
+        value['position'] = (i + 1)
+    return lst
