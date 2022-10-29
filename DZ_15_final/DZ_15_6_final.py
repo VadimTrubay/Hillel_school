@@ -52,7 +52,7 @@ def getBoardCopy(board):
 
 
 def isSpaceFree(board, move):
-    return board[move] == ' '
+    return board[move] == ''
 
 
 def getPlayerMove(board):
@@ -79,13 +79,13 @@ def getComputerMove(board, computer_letter):
         player_letter = '0'
     else:
         player_letter = 'x'
-    for i in range(1, 9):
+    for i in range(1, 10):
         copy = getBoardCopy(board)
         if isSpaceFree(copy, i):
             makeMove(copy, computer_letter, i)
             if isWinner(copy, computer_letter):
                 return i
-    for i in range(1, 9):
+    for i in range(1, 10):
         copy = getBoardCopy(board)
         if isSpaceFree(copy, i):
             makeMove(copy, player_letter, i)
@@ -100,9 +100,10 @@ def getComputerMove(board, computer_letter):
 
 
 def isBoardFull(board):
-    for i in range(1, 9):
+    for i in range(1, 10):
         if isSpaceFree(board, i):
             return False
+    return True
 
 
 print("Let's play x or 0!")
