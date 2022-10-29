@@ -79,13 +79,13 @@ def getComputerMove(board, computer_letter):
         player_letter = '0'
     else:
         player_letter = 'x'
-    for i in range(1, 10):
+    for i in range(1, 9):
         copy = getBoardCopy(board)
         if isSpaceFree(copy, i):
             makeMove(copy, computer_letter, i)
             if isWinner(copy, computer_letter):
                 return i
-    for i in range(1, 10):
+    for i in range(1, 9):
         copy = getBoardCopy(board)
         if isSpaceFree(copy, i):
             makeMove(copy, player_letter, i)
@@ -100,7 +100,7 @@ def getComputerMove(board, computer_letter):
 
 
 def isBoardFull(board):
-    for i in range(1, 10):
+    for i in range(1, 9):
         if isSpaceFree(board, i):
             return False
 
@@ -110,7 +110,7 @@ print("Player plays for x, computer plays for 0")
 board()
 print()
 while True:
-    theBoard = [' '] * 10
+    theBoard = [' '] * 9
     playerLetter = 'x'
     computer_letter = '0'
     turn = whoGoesFirst()
