@@ -52,7 +52,7 @@ def getBoardCopy(board):
 
 
 def isSpaceFree(board, move):
-    return board[move] == ''
+    return board[move] == ' '
 
 
 def getPlayerMove(board):
