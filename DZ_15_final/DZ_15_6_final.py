@@ -113,41 +113,42 @@ def board_full(board):
 
 
 while True:
-    theBoard = [' '] * 10
+    the_board = [' '] * 10
     player_Letter = 'x'
     computer_letter = '0'
     turn = who_goes_first()
-    print('Will be the first to walk ' + turn + '\n')
-    gameIsPlaying = True
-    while gameIsPlaying:
+    game_playing = True
+    while game_playing:
         os.system('cls')
         print("Let's play x or 0!")
-        print("Player plays for x, computer plays for 0")
+        print('Will be the first to walk ' + turn)
+        board()
+        print('===========\n')
         if turn == 'player':
-            draw_board(theBoard)
-            move = get_player_move(theBoard)
-            make_move(theBoard, player_Letter, move)
-            if winner(theBoard, player_Letter):
-                draw_board(theBoard)
+            draw_board(the_board)
+            move = get_player_move(the_board)
+            make_move(the_board, player_Letter, move)
+            if winner(the_board, player_Letter):
+                draw_board(the_board)
                 print('Congratulations!!! You have won the game!')
-                gameIsPlaying = False
+                game_playing = False
             else:
-                if board_full(theBoard):
-                    draw_board(theBoard)
+                if board_full(the_board):
+                    draw_board(the_board)
                     print('Draw!')
                     break
                 else:
                     turn = 'computer'
         else:
-            move = get_computer_move(theBoard, computer_letter)
-            make_move(theBoard, computer_letter, move)
-            if winner(theBoard, computer_letter):
-                draw_board(theBoard)
+            move = get_computer_move(the_board, computer_letter)
+            make_move(the_board, computer_letter, move)
+            if winner(the_board, computer_letter):
+                draw_board(the_board)
                 print('The computer won!')
-                gameIsPlaying = False
+                game_playing = False
             else:
-                if board_full(theBoard):
-                    draw_board(theBoard)
+                if board_full(the_board):
+                    draw_board(the_board)
                     print('Draw!')
                     break
                 else:
@@ -155,4 +156,3 @@ while True:
 
     if not play_again():
         break
-
