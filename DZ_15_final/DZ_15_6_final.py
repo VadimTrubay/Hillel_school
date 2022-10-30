@@ -35,15 +35,15 @@ def make_move(board, letter, move):
     board[move] = letter
 
 
-def winner(bo, le):
-    return ((bo[1] == le and bo[2] == le and bo[3] == le) or
-            (bo[4] == le and bo[5] == le and bo[6] == le) or
-            (bo[7] == le and bo[8] == le and bo[9] == le) or
-            (bo[1] == le and bo[4] == le and bo[7] == le) or
-            (bo[2] == le and bo[5] == le and bo[8] == le) or
-            (bo[3] == le and bo[6] == le and bo[9] == le) or
-            (bo[1] == le and bo[5] == le and bo[9] == le) or
-            (bo[3] == le and bo[5] == le and bo[7] == le))
+def winner(board, letter):
+    return ((board[1] == letter and board[2] == letter and board[3] == letter) or
+            (board[4] == letter and board[5] == letter and board[6] == letter) or
+            (board[7] == letter and board[8] == letter and board[9] == letter) or
+            (board[1] == letter and board[4] == letter and board[7] == letter) or
+            (board[2] == letter and board[5] == letter and board[8] == letter) or
+            (board[3] == letter and board[6] == letter and board[9] == letter) or
+            (board[1] == letter and board[5] == letter and board[9] == letter) or
+            (board[3] == letter and board[5] == letter and board[7] == letter))
 
 
 def get_board_copy(board):
