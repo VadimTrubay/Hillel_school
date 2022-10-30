@@ -1,4 +1,5 @@
 import random
+import os
 
 
 def board():
@@ -111,10 +112,6 @@ def board_full(board):
     return True
 
 
-print("Let's play x or 0!")
-print("Player plays for x, computer plays for 0")
-board()
-print()
 while True:
     theBoard = [' '] * 10
     player_Letter = 'x'
@@ -123,6 +120,9 @@ while True:
     print('Will be the first to walk ' + turn + '\n')
     gameIsPlaying = True
     while gameIsPlaying:
+        os.system('cls')
+        print("Let's play x or 0!")
+        print("Player plays for x, computer plays for 0")
         if turn == 'player':
             draw_board(theBoard)
             move = get_player_move(theBoard)
