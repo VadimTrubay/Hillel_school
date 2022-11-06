@@ -3,4 +3,10 @@
 # Предполагается, что элементы списка будут соответствовать правилам задания ключей в словарях.
 
 def to_dict(lst):
-    return {lst[i]: lst[i] for i in range(0, len(lst))}
+    # return {lst[i]: lst[i] for i in range(0, len(lst))}
+    return dict(zip(lst, lst))
+
+
+lst = [4, 15, 254, 'qwer', '123@@']
+
+print(to_dict(lst))

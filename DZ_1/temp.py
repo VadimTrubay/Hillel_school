@@ -1,90 +1,93 @@
-# Задание 1
-#Дан список словарей, в каждом из словарей есть ключ name и position, он отвечает за расположение элемента в
-#списке. Position всегда должен быть последовательным, например у нас есть список
-#Придерживаясь такой логики, необходимо реализовать:
-# Удаление элемента
-
-from pprint import pprint
-
-data = [
-    {'name': 'Test 1', 'position': 1},
-    {'name': 'Test 2', 'position': 2},
-    {'name': 'Test 3', 'position': 3},
-    {'name': 'Test 4', 'position': 4},
-    {'name': 'Test 5', 'position': 5}
-]
-
-def delete_pos(lst, position_number):
-    lst.pop(position_number - 1)
-    for i, i_value in enumerate(lst):
-        i_value['position'] = (i + 1)
-    return lst
-
-
-pprint(delete_pos(data, 2))
-
-# Задача 2
-#Добавление элемента с любым position, например мы хотим в наш исходный список добавить
-# элемент у которого position = 1, то должны получить:
-
-from pprint import pprint
-
-data = [
-    {'name': 'Test 1', 'position': 1},
-    {'name': 'Test 2', 'position': 2},
-    {'name': 'Test 3', 'position': 3},
-]
-
-def add_pos(lst, position_number, arg_for_pos):
-    new_dict = {'name': f'{arg_for_pos} {len(lst) + 1}', 'position': None}
-    lst.insert(position_number - 1, new_dict)
-
-    for i, i_value in enumerate(lst):
-        i_value['position'] = (i + 1)
-    return lst
-
-pprint(add_pos(data, 1, 'Test'))
-
-
-
-# Задание 3
-#Поменять элементы местами, например position 1 и position 3, то должны получить следующий список:
-
-from pprint import pprint
-data = [
-    {'name': 'Test 1', 'position': 1},
-    {'name': 'Test 2', 'position': 2},
-    {'name': 'Test 3', 'position': 3},
-
-]
-def change_pos(lst, pos_for_change_1, pos_for_change_2):
-    lst.insert(pos_for_change_1 - 1, lst[pos_for_change_2 - 1])
-    lst.pop(pos_for_change_2)
-    lst.insert(pos_for_change_2, lst[pos_for_change_1])
-    lst.pop(pos_for_change_1)
-
-    for i, i_value in enumerate(lst):
-        i_value['position'] = (i + 1)
-
-    return lst
-
-pprint(change_pos(data, 1, 3))
-
-
-# Задание 1
-# Напишите функцию change(lst), которая принимает список и меняет местами его первый и последний элемент.
-# В исходном списке минимум 2 элемента.
-
-
-
-def change(lst: list) -> list:
-
-    lst[0], lst[-1] = lst[-1], lst[0]
-    return lst
-
-a = [4, 8, 2, 'qwert', '@#$']
-print(change(a))
-
+# # Задание 1
+# # Дан список словарей, в каждом из словарей есть ключ name и position, он отвечает за расположение элемента в
+# # списке. Position всегда должен быть последовательным, например у нас есть список
+# # Придерживаясь такой логики, необходимо реализовать:
+# # Удаление элемента
+#
+# from pprint import pprint
+#
+# data = [
+#     {'name': 'Test 1', 'position': 1},
+#     {'name': 'Test 2', 'position': 2},
+#     {'name': 'Test 3', 'position': 3},
+#     {'name': 'Test 4', 'position': 4},
+#     {'name': 'Test 5', 'position': 5}
+# ]
+#
+#
+# def delete_pos(lst, position_number):
+#     lst.pop(position_number - 1)
+#     for i, i_value in enumerate(lst):
+#         i_value['position'] = (i + 1)
+#     return lst
+#
+#
+# pprint(delete_pos(data, 2))
+#
+# # Задача 2
+# # Добавление элемента с любым position, например мы хотим в наш исходный список добавить
+# # элемент у которого position = 1, то должны получить:
+#
+# from pprint import pprint
+#
+# data = [
+#     {'name': 'Test 1', 'position': 1},
+#     {'name': 'Test 2', 'position': 2},
+#     {'name': 'Test 3', 'position': 3},
+# ]
+#
+#
+# def add_pos(lst, position_number, arg_for_pos):
+#     new_dict = {'name': f'{arg_for_pos} {len(lst) + 1}', 'position': None}
+#     lst.insert(position_number - 1, new_dict)
+#
+#     for i, i_value in enumerate(lst):
+#         i_value['position'] = (i + 1)
+#     return lst
+#
+#
+# pprint(add_pos(data, 1, 'Test'))
+#
+# # Задание 3
+# # Поменять элементы местами, например position 1 и position 3, то должны получить следующий список:
+#
+# from pprint import pprint
+#
+# data = [
+#     {'name': 'Test 1', 'position': 1},
+#     {'name': 'Test 2', 'position': 2},
+#     {'name': 'Test 3', 'position': 3},
+#
+# ]
+#
+#
+# def change_pos(lst, pos_for_change_1, pos_for_change_2):
+#     lst.insert(pos_for_change_1 - 1, lst[pos_for_change_2 - 1])
+#     lst.pop(pos_for_change_2)
+#     lst.insert(pos_for_change_2, lst[pos_for_change_1])
+#     lst.pop(pos_for_change_1)
+#
+#     for i, i_value in enumerate(lst):
+#         i_value['position'] = (i + 1)
+#
+#     return lst
+#
+#
+# pprint(change_pos(data, 1, 3))
+#
+#
+# # Задание 1
+# # Напишите функцию change(lst), которая принимает список и меняет местами его первый и последний элемент.
+# # В исходном списке минимум 2 элемента.
+#
+#
+# def change(lst: list) -> list:
+#     lst[0], lst[-1] = lst[-1], lst[0]
+#     return lst
+#
+#
+# a = [4, 8, 2, 'qwert', '@#$']
+# print(change(a))
 
 
 # Задание 1
@@ -93,11 +96,10 @@ print(change(a))
 # соответствовать правилам задания ключей в словарях.
 
 
-
 def to_dict(lst):
-
     a = dict(zip(lst, lst))
     return a
+
 
 lst = [4, 15, 254, 'qwer', '123@@']
 
@@ -121,7 +123,6 @@ def sum_range(start: int, end: int):
 print(sum_range(4, 9))
 
 
-
 # Задание 4
 # Напишите функцию read_last(lines, file), которая будет открывать определенный файл file
 # и выводить на печать построчно последние строки в количестве lines (на всякий случай проверим,
@@ -142,14 +143,12 @@ def read_last(lines, file):
 
 read_last(5, 'for 13.txt')
 
-
 # Задание №1
 # Дан список словарей, необходимо записать их в файл с помощью модуля pickle.
 # В каждом из словарей одинаковый набор ключей, а все значения представлены в виде строк
 
 
 import pickle
-
 
 job_title = [
     {
@@ -165,7 +164,7 @@ job_title = [
 file = open('omtp.com.ua', 'wb')
 file.write(pickle.dumps(job_title))
 file.close()
-#Задание 2
+# Задание 2
 # Дано два словаря
 # Необходимо написать код который будет их объединять
 # Но нужно так-же учитывать коллизии, например ситуация когда у нас два одинаковых ключа и чтобы
@@ -197,8 +196,7 @@ json_result = json.dumps(result)
 with open('result.json', 'w') as file:
     file.write(json_result)
 
-
-#Задание #1
+# Задание #1
 # Дано два множества A и B
 # В множестве А находятся имена должников за Сентябрь
 # В множестве B находятся имена должников за Октябрь
@@ -212,7 +210,7 @@ B = {'Артур', 'Коля', 'Герасим', 'Петя', 'Жанна'}
 print(A | B)
 print(B - A)
 
-#Задание #2:
+# Задание #2:
 '''Права доступа
 Вирус повредил систему прав доступа к файлам. Известно, что над каждым файлом можно производить определенные действия:
 запись – W;
@@ -283,22 +281,19 @@ for i in range(len(A)):
 
 A = [[1, 6, 8, 5, 4, 0, 3],
 
-    [5, 7, 8, 9, 4, 2, 1],
+     [5, 7, 8, 9, 4, 2, 1],
 
-    [6, 0, 7, 8, 1, 2, 5],
+     [6, 0, 7, 8, 1, 2, 5],
 
-    [5, 7, 2, 7, 5, 2, 1]]
+     [5, 7, 2, 7, 5, 2, 1]]
 
 for i, a in enumerate(A):
+    print(*[A[i][j] for j, b in enumerate(a) if j % 2 == 0 and A[0][j] > A[len(A) - 1][j]])
 
-    print(*[A[i][j] for j, b in enumerate(a) if j % 2 == 0 and A[0][j] > A[len(A)-1][j]])
-
- #Задача 3
+# Задача 3
 # Дан многомерный список в котором находится результат игры в крестики нолики,
 # выяснить какой игрок победил (x или o), если никто не победил вывести "Ничья".
 # Необходимо учитывать то,что есть разные выигрышные варианты и программа должна их распознавать.
-
-
 
 
 Doska = [
@@ -310,8 +305,8 @@ Doska = [
 n = 0
 
 for i, i_value in enumerate(Doska):
-    V = 0   #hod vas
-    P = 0   #hod pet
+    V = 0  # hod vas
+    P = 0  # hod pet
 
     for j, j_value in enumerate(i_value):
         if str(Doska[i][j]) == 'x':
@@ -323,16 +318,18 @@ for i, i_value in enumerate(Doska):
         elif str(Doska[j][i]) == 'o':
             P -= 1
 
-        if str(Doska[0][0]) == str(Doska[1][1]) == str(Doska[2][2]) == 'x' or str(Doska[0][2]) == str(Doska[2][0]) == str(Doska[1][1]) == 'x':
+        if str(Doska[0][0]) == str(Doska[1][1]) == str(Doska[2][2]) == 'x' or str(Doska[0][2]) == str(
+                Doska[2][0]) == str(Doska[1][1]) == 'x':
             n += 1
-        if str(Doska[0][0]) == str(Doska[1][1]) == str(Doska[2][2]) == 'o' or str(Doska[0][2]) == str(Doska[2][0]) == str(Doska[1][1]) == 'o':
+        if str(Doska[0][0]) == str(Doska[1][1]) == str(Doska[2][2]) == 'o' or str(Doska[0][2]) == str(
+                Doska[2][0]) == str(Doska[1][1]) == 'o':
             n -= 1
 
-        if V == 3 or P == 3 or n == 3: #
+        if V == 3 or P == 3 or n == 3:  #
             print("x win")
             exit()
 
-        elif V == -3 or P == -3 or n == -3:#
+        elif V == -3 or P == -3 or n == -3:  #
             print("o win")
             exit()
 
@@ -353,10 +350,8 @@ for num in range(5):
 
 print(list_num)
 
-
-#Задание 2:
-#Дан список A = [1, 2, 3, 4, 5] Удалить последнее число из списка
-
+# Задание 2:
+# Дан список A = [1, 2, 3, 4, 5] Удалить последнее число из списка
 
 
 A = [1, 2, 3, 4, 5]
@@ -364,12 +359,10 @@ del A[-1]
 
 print(A)
 
-
-#Задание 3:
-#Запросить у пользователя 10 чисел и записать их в список A
-#Запросить у пользователя число N
-#Вывести пользователю сколько в списке A повторяется число N
-
+# Задание 3:
+# Запросить у пользователя 10 чисел и записать их в список A
+# Запросить у пользователя число N
+# Вывести пользователю сколько в списке A повторяется число N
 
 
 my_list = []
@@ -387,14 +380,13 @@ for num_2 in my_list:
 
 print(rep)
 
-#Задание 4:
-#Запросить у пользователя число N
-#Запросить у пользователя N чисел и записать их в список A
-#Вывести список в обратной последовательности
+# Задание 4:
+# Запросить у пользователя число N
+# Запросить у пользователя N чисел и записать их в список A
+# Вывести список в обратной последовательности
 
 
-
-N = int(input('Число пользователя N:' ))
+N = int(input('Число пользователя N:'))
 number = []
 
 for num in range(N):
@@ -406,12 +398,11 @@ print('Cписок A =', number)
 
 print('Обратный список =', number_rev)
 
-#Задание 5:
-#Запросить у пользователя 5 чисел и записать их в список A
-#Записать все числа из списка A которые больше 5 в список C
+# Задание 5:
+# Запросить у пользователя 5 чисел и записать их в список A
+# Записать все числа из списка A которые больше 5 в список C
 
-#NO
-
+# NO
 
 
 A = []
@@ -427,17 +418,15 @@ for num_2 in A:
 
 print('Список C ', C)
 
-#адание 6:
-#Запросить у пользователя число N
-#Запросить у пользователя N целых чисел и записать их в список A
-#Найти в нем минимальное и максимальное число с помощью цикла (запрещено использовать функцию min и max).
+# адание 6:
+# Запросить у пользователя число N
+# Запросить у пользователя N целых чисел и записать их в список A
+# Найти в нем минимальное и максимальное число с помощью цикла (запрещено использовать функцию min и max).
 # Вывести эти числа.
 
 
-
 A = []
-N = int(input('Число пользователя N:' ))
-
+N = int(input('Число пользователя N:'))
 
 for num in range(N):
     x = int(input('Введите число: '))
@@ -450,9 +439,8 @@ a, *_, b = A
 print(f'Min =', a)
 print(f'Max =', b)
 
-#Задание 7:
+# Задание 7:
 # Пользователь вводит текст нужно вывести количество цифр в этом тексте
-
 
 
 a = input('Введите строку; ')
@@ -460,8 +448,8 @@ a = input('Введите строку; ')
 num = [int(i) for i in a if i.isdigit()]
 print('Количество цифр в тексте:', len(num))
 
- #  Задание 1  Написать программу которая проверяет что в строке есть хотя бы один пробел,
- #число, буква нижнего и верхнего регистра. Если это так, то вывести 'YES', иначе 'NO'
+#  Задание 1  Написать программу которая проверяет что в строке есть хотя бы один пробел,
+# число, буква нижнего и верхнего регистра. Если это так, то вывести 'YES', иначе 'NO'
 
 
 import string
@@ -474,14 +462,14 @@ symbol_upper = 0
 symbol_digit = 0
 
 for symbol in test_string:
-     if symbol.isspace():
-         symbol_space += 1
-     elif symbol.islower():
-         symbol_lower += 1
-     elif symbol.isupper():
-         symbol_upper += 1
-     elif symbol.isdigit():
-         symbol_digit += 1
+    if symbol.isspace():
+        symbol_space += 1
+    elif symbol.islower():
+        symbol_lower += 1
+    elif symbol.isupper():
+        symbol_upper += 1
+    elif symbol.isdigit():
+        symbol_digit += 1
 if symbol_lower != 0 and symbol_upper != 0 and symbol_digit != 0 and symbol_space != 0:
     print('YES')
 else:
@@ -496,7 +484,7 @@ f1 = f2 = 1
 print(f1, f2, end=' ')
 i = 2
 while i < count:
-    f1, f2 = f2, f1+f2
+    f1, f2 = f2, f1 + f2
     print(f2, end=' ')
     i += 1
 print()
@@ -573,7 +561,6 @@ digits = '0123456789'
 all = lower_case + upper_case + special + digits
 passworld = ''.join(random.sample(all, symbol_len))
 
-
 upper_case = any([1 if i in string.ascii_uppercase else 0 for i in passworld])
 lower_case = any([1 if i in string.ascii_lowercase else 0 for i in passworld])
 special = any([1 if i in string.punctuation else 0 for i in passworld])
@@ -609,7 +596,7 @@ for i in range(5, 0, -1):
 for i in range(1, 11):
 
     for n in range(1, 11):
-        print(n, '*', i, '=', n*i, sep='', end='    ')
+        print(n, '*', i, '=', n * i, sep='', end='    ')
     print()
 
 # Задание 2:
@@ -617,7 +604,7 @@ for i in range(1, 11):
 
 
 for i in range(1, 11):
-    print('3*', i, '=', 3*i, sep='')
+    print('3*', i, '=', 3 * i, sep='')
 
 # Задание 3:
 # Программа с помощью библиотеки random генерирует случайное число от 1 до 10,
@@ -630,7 +617,7 @@ import random
 n = 0
 for i in range(1, 11):
 
-    print(f'Попытка №', n+1)
+    print(f'Попытка №', n + 1)
     a = int(input(':'))
 
     if a == i:
@@ -642,9 +629,7 @@ for i in range(1, 11):
         print('Бери меньше')
     n += 1
     if n == 3:
-
         break
-
 
 # Вывести треугольник #1 с шириной N с помощью цикла while
 
@@ -652,11 +637,10 @@ N = int(input("Please input number :"))
 
 num_height = 1
 
-
 while num_height <= N:
     num_width = N
     while num_width >= num_height:
-        print("*" ,end = '' )
+        print("*", end='')
         num_width -= 1
     num_height += 1
     print()
@@ -667,7 +651,6 @@ N = int(input("Please input number :"))
 
 h = 1
 
-
 while h <= N:
     w = 1
     while w <= h:
@@ -675,7 +658,6 @@ while h <= N:
         w += 1
     h += 1
     print()
-
 
 # Вывести треугольник #3 с шириной N с помощью цикла while
 
@@ -686,18 +668,17 @@ print(('*') * i)
 while i != 1:
     i -= 1
 
-    print((' ') * (N-i) + (('*') * i))
+    print((' ') * (N - i) + (('*') * i))
 
 # Задание 1
 a = int(input('Введите число A: '))
 b = int(input('Введите число B: '))
 c = int(input('Введите число C: '))
 
-if min(a, b, c) > 10 and a%3 == 0 and b%3 == 0:
+if min(a, b, c) > 10 and a % 3 == 0 and b % 3 == 0:
     print('Yes')
 else:
     print('No')
-
 
 # Задание 2
 
@@ -713,11 +694,10 @@ if c > max:
 
 print(f'max: ', max)
 
-
 # Задания со звездочкой:
 
 number = int(input('Введите 3х значное число:'))
-if not 100<= number<=999:
+if not 100 <= number <= 999:
     print('Ошибка, число не входит в диапазон')
     exit()
 
@@ -726,4 +706,3 @@ second_num = number % 100 // 10
 third_num = number % 1000 // 100
 final_num = first_num * 100 + second_num * 10 + third_num
 print(final_num)
-
