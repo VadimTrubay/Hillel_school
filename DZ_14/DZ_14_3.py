@@ -6,6 +6,7 @@
 # {'name': 'Test 1', 'position': 3},
 # ]
 # Функционал необходимо реализовать с помощью функций!
+import pprint
 
 data = [
     {
@@ -19,15 +20,7 @@ data = [
     {
         'name': 'Test 3',
         'position': 3
-    },
-    {
-        'name': 'Test 4',
-        'position': 4
-    },
-    {
-        'name': 'Test 5',
-        'position': 5
-    },
+    }
 ]
 
 
@@ -37,9 +30,9 @@ def change_pos(lst, pos_1, pos_2):
     lst.insert(pos_2, lst[pos_1])
     lst.pop(pos_1)
 
-    for i, i_value in enumerate(lst):
-        i_value['position'] = (i + 1)
+    for key, value in enumerate(lst):
+        value['position'] = (key + 1)
     return lst
 
 
-print(change_pos(data, 1, 2))
+pprint.pprint(change_pos(data, 1, 3))
