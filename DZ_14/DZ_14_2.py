@@ -10,6 +10,7 @@
 # {'name': 'Test 3', 'position': 4},  # +1
 # ]
 # Функционал необходимо реализовать с помощью функций!
+import pprint
 
 data = [
     {
@@ -23,15 +24,7 @@ data = [
     {
         'name': 'Test 3',
         'position': 3
-    },
-    {
-        'name': 'Test 4',
-        'position': 4
-    },
-    {
-        'name': 'Test 5',
-        'position': 5
-    },
+    }
 ]
 
 
@@ -39,9 +32,9 @@ def add_pos(lst, pos_num, pos):
     new_dict = {'name': f'{pos} {len(lst) + 1}', 'position': None}
     lst.insert(pos_num - 1, new_dict)
 
-    for i, value in enumerate(lst):
-        value['position'] = (i + 1)
+    for key, value in enumerate(lst):
+        value['position'] = (key + 1)
     return lst
 
 
-print(add_pos(data, 2, 'Test'))
+pprint.pprint(add_pos(data, 2, 'Test'))
