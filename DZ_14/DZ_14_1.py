@@ -15,6 +15,7 @@
 # Придерживаясь такой логики, необходимо реализовать:
 # 1. Удаление элемента
 # Функционал необходимо реализовать с помощью функций!
+import pprint
 
 data = [
     {
@@ -36,15 +37,15 @@ data = [
     {
         'name': 'Test 5',
         'position': 5
-    },
+    }
 ]
 
 
 def del_pos(lst, pos_num):
     lst.pop(pos_num - 1)
-    for i, value in enumerate(lst):
-        value['position'] = (i + 1)
+    for key, value in enumerate(lst):
+        value['position'] = (key + 1)
     return lst
 
 
-print(del_pos(data, 3))
+pprint.pprint(del_pos(data, 3))
