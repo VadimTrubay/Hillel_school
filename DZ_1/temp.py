@@ -713,3 +713,13 @@
 # third_num = number % 1000 // 100
 # final_num = first_num * 100 + second_num * 10 + third_num
 # print(final_num)
+# a = [
+#     [1, 6, 8, 5, 4, 0, 3],
+#     [5, 7, 8, 9, 4, 2, 1],
+#     [6, 0, 7, 8, 1, 2, 5],
+#     [5, 7, 2, 7, 5, 2, 1]
+# ]
+# for i in range(len(a)):
+#     F, *centr, L = a[i]
+#     print(F, L)
+
