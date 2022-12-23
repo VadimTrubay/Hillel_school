@@ -723,3 +723,14 @@
 #     F, *centr, L = a[i]
 #     print(F, L)
 
+
+# from re import search
+# j = 'Oceans'
+# key = 'ocean'
+# reg = bool(search(f'{j.lower()}\-', key))
+# print(reg)
+
+j = 'Oceans'
+key = 'Ocean'
+if key in j:
+    print('Ok')
